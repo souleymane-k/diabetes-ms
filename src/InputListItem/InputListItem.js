@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CircleButton from '../CircleButton/CircleButton';
 
 class InputListItem extends Component {
-  render() {
+  render(){
         const {filterOption } = this.props;
          const list = this.props.months
             .filter(month => month.monthName
@@ -17,7 +17,6 @@ class InputListItem extends Component {
           <div className="InputList">
              {list}    
       </div>
-
       <div className='InputItem__button-container'>
           <CircleButton
             tag={Link}

@@ -7,9 +7,6 @@ class OptionList extends Component {
   render() {
     const{filterOption} = this.props
     return (
-
-    
-
         <div className="OptionList">
           <div className="FilterOptions__option">
           <label htmlFor="filter_all">

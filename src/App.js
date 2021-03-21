@@ -3,13 +3,12 @@ import {Route, Switch} from 'react-router-dom';
 import './App.css'
 import Option from './Option/Option';
 // import AddResults from './AddResults/AddResults';
- import InputListItem from './InputListItem/InputListItem';
- import Header from './Header/Header';
+import InputListItem from './InputListItem/InputListItem';
+import Header from './Header/Header';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
-import HomePage from './HomePage/HomePage'
+import HomePage from './HomePage/HomePage';
 import AddResults from './AddResults/AddResults'
-//  import {API_ENDPOINT} from '../config';
 
 
 class App extends Component {
@@ -21,13 +20,7 @@ class App extends Component {
       filterOption: ''
     }
 
-    //  componentDidMount() {
-    //    setTimeout(() => this.setState(dummyStore), 600)
-    //  }
-
-  //    componentDidMount(){
-  //   fetch(`${API_ENDPOINT}/meals`).then((response) => response.json()).then((json)=> this.setState({filterOption: json}));
-  //   }
+  
    }
 
   updateFilterOption = (event) => {
@@ -57,7 +50,7 @@ class App extends Component {
        handleFilterChange={this.updateFilterOption}/>
        
        <InputListItem 
-      months ={this.props.months}
+      months={this.props.months}
       filterOption={this.state.filterOption}/> 
 
     </main>
