@@ -6,6 +6,7 @@ export default class SignUpForm extends Component {
   render() {
     
     return (
+      
       <form
         className='signUpForm-form'
        
