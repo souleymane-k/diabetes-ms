@@ -1,0 +1,49 @@
+.headerContainer{
+    background-color: darkgrey;
+    height:280px;
+    padding: 5px;
+    
+}
+
+.headerLink {
+    text-decoration: none;
+    padding: 5px;
+}
+.logInForm{
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+    color:black;
+    background:white;
+}
+
+.signUpForm{
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+    color:black;
+    background:white;
+}
+/* .homepage{
+    text-decoration: none;
+    padding: 5px;
+    border: solid;
+    border-radius: 10px;
+    margin: 5px;
+    color:black;
+    background:white;
+} */
+.result{
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+    color:black;
+    background:white; 
+}
+
+.navButton{
+    display: inline-block;
+}
