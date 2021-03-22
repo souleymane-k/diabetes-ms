@@ -14,15 +14,15 @@ class InputListItem extends Component {
             .map((month, key) => <InputItem {...month} key={key} />);
          return (
            <div>
-          <div className="InputList">
+          <div className="InputListItem">
              {list}    
       </div>
-      <div className='InputItem__button-container'>
+      <div className='InputListItem__button-container'>
           <CircleButton
             tag={Link}
             to='/add-result'
             type='button'
-            className='InputIem__add-meal-button'
+            className='InputListIem__add-result-button'
           >
             <FontAwesomeIcon icon='plus' />
             <br />

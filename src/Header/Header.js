@@ -17,7 +17,7 @@ class Header extends Component {
           <Link to ='/SignUpForm' className='signUpForm' >Register</Link>
       </div>
       <div className='result'>
-          <Link to ='/addResult' className='signUpForm' >Add Result</Link>
+          <Link to ='/HomePage' className='signUpForm' >Home Page</Link>
       </div>
       </div>
     </div>

@@ -1,0 +1,108 @@
+.logInform{
+    padding: 2em 0;
+    margin: 0;
+  }
+  
+  .registration-page {
+    padding: 2em 0;
+    margin: 0;
+  }
+  
+  form {
+    margin: 0 auto;
+    /* border: 1px solid black; */
+  }
+  
+  fieldset {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    /* flex-flow: column nowrap; */
+    /* background-color: $color-surface; */
+    border: none;
+    border-radius: 4px;
+    /* box-shadow: -1px 1px 5px 4px $color-shadow; */
+    padding: 1em 1.5em;
+  }
+    label{
+      margin: 1em 0 0 0;
+      padding: .25em 0;
+      text-align: left;
+      width: auto;
+
+    }
+  
+    input {
+      width: 100%;
+      line-height: 2em;
+      padding: 0 .5em;
+      border-radius: 2px;
+      border: 2px solid 
+      /* background-color: $color-overlay; */
+      /* color: $color-text-normal; */
+    }
+  
+    input:focus {
+      border: 2px solid;
+    }
+  
+    div {
+      margin: 1em;
+    }
+  
+  
+  /* .error-msg {
+    color: $color-error;
+  }
+   */
+  .warning-msg {
+    margin-top: 1em;
+    color: red;
+    font-size: 12px;
+  }
+  
+  input[type='submit'] {
+    margin: 2em auto 1em auto;
+    padding: 0.25em 0;
+    width: 100px;
+    background-color: black;
+    border: 1px solid whitesmoke;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px 0px black;
+    /* transition: box-shadow 0.1s; */
+  }
+    /* &:hover {
+      background-color: $color-overlay-dark;
+      color: $color-text-normal;
+      border: 1px solid $color-quaternary;
+      cursor: pointer;
+    } */
+    /* &:focus {
+      background-color: $color-overlay-dark;
+      color: $color-text-normal;
+      border: 1px solid $color-quaternary;
+      box-shadow: none;
+    } */
+    /* &:active {
+      background-color: $color-overlay-dark;
+      color: $color-text-normal;
+      border: 1px solid $color-secondary;
+    }
+  } */
+  
+  @media only screen and (min-width: 520px) {
+    fieldset {
+      width: 400px;
+      padding: 1em 2em;
+    }
+  
+    .login-page {
+      padding: 1em;
+      margin: 2em auto;
+    }
+    
+    .registration-page {
+      padding: 1em;
+      margin: 2em auto;
+    }
+  }

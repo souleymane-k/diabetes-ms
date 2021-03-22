@@ -4,6 +4,13 @@ import './OptionList.css';
 
 class OptionList extends Component {
   
+
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     filterOption: ''
+  //   }
+  
   render() {
     const{filterOption} = this.props
     return (

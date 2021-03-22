@@ -3,3 +3,9 @@
         box-sizing: border-box;
         /* text-align: center; */
       }
+
+      .optionlistelement{
+        border:solid;
+        padding:5px;
+        margin:5px;
+      }

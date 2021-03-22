@@ -2,3 +2,15 @@ h1{
     background:red;
     
 }
+
+.firtssection{
+    border:solid;
+    border-radius: 5%;
+    margin:10px;
+}
+
+.secondsection{
+    border:solid;
+    margin:10px;
+    border-radius: 5%;
+}
