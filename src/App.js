@@ -28,8 +28,6 @@ class App extends Component {
 
  }
 
-
-
   updateFilterOption = (event) => {
     this.setState({
       filterOption: event.target.value
@@ -61,7 +59,7 @@ class App extends Component {
     )
   }
 
-  renderRoute(){
+  renderOptionRoute(){
     const{filterOption} = this.state;
     return(
       <>
@@ -112,7 +110,7 @@ class App extends Component {
       filterOption={this.state.filterOption}/>  */}
     </Switch> 
 
-{this.renderRoute()}
+{this.renderOptionRoute()}
 {this.renderMainRoute()}
 
     </main>

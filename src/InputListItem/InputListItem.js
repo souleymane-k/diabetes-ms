@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import './InputListItem.css';
 import InputItem from '../InputItem/InputItem';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CircleButton from '../CircleButton/CircleButton';
 
 class InputListItem extends Component {
@@ -17,6 +17,7 @@ class InputListItem extends Component {
           <div className="InputListItem">
              {list}    
       </div>
+      <p>The following button is to add new object. Not operation at this stage</p>
       <div className='InputListItem__button-container'>
           <CircleButton
             tag={Link}
@@ -60,12 +61,7 @@ class InputListItem extends Component {
       
 
       
-     // const list = this.props.meals
-    //     .map((meal, key) => <InputItem {...meal} key={key} />);
-    // return (
-    //   <div className="InputList">
-    //     {list}
-    //   </div> 
+
 
     
 

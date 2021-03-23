@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './SignUpForm.css';
 
 
 export default class SignUpForm extends Component {
@@ -20,8 +21,7 @@ export default class SignUpForm extends Component {
             type='text'
             name='user_name'
             id='SignUpForm-form__user-name'
-            // value='user_name'
-            // placeholder='username'
+            placeholder='username'
             required
           />
           <label className='signUpForm-form__email-label' htmlFor='signUpForm-form__email'>
@@ -31,7 +31,6 @@ export default class SignUpForm extends Component {
             type='email'
             name='email'
             id='SignUpForm__email'
-            value='email'
             required
           />
           <label className='signUpForm-form__password-label' htmlFor='signUpForm-form__password'>
@@ -41,7 +40,6 @@ export default class SignUpForm extends Component {
             type='password'
             name='password'
             id='SignUpForm-form__password'
-            value='password'
             placeholder='password'
             required
           />
@@ -52,11 +50,10 @@ export default class SignUpForm extends Component {
             type='password'
             name='passwordRepeat'
             id='SignUpForn-form__password-repeat'
-            value='passwordRepeat'
             placeholder='password'
             required
           />
-          <button>Submit</button>
+          <input type='submit' value='submit' />
         </fieldset>
   
       </form>

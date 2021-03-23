@@ -3,8 +3,8 @@
   
   }
 .OptionList_option{
-  border-radius: 50%;
-  display: block;
+  border-radius: 0;
+  /* display: block; */
   
 }
 
