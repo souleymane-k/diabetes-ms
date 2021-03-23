@@ -12,8 +12,7 @@ class Option extends Component {
           <h1>Select A Month To See The Details</h1>
         </div>
         <div className="optionlistelement">
-          This section is an illustartion showing the final list of data. Individuals could retrieve these data by sorting the desired month or the whole the year. select any desire year to see the outcome. Indidivual result emcompasses 5 objects, The month, the meal type, the glucose level, the date and the description or comment.
-          </div>
+        This section is an illustration showing the final list of data. Individuals could retrieve these data by sorting the desired month or the whole year. Select any desired year to see the outcome. Individual result encompasses five objects(The month, the meal type such as breakfast, lunch, or dinner and the glucose level, the date, and the description or comment).          </div>
         <div className="OptionList_option">
           <OptionList 
           filterOption={this.props.filterOption}
