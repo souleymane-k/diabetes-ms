@@ -34,18 +34,11 @@ const MONTHS = [
 ];
 
 
-
 ReactDOM.render(
   <BrowserRouter>
     <App months={MONTHS}/>
     </BrowserRouter>,
      document.getElementById('root'));
-
-// ReactDOM.render(
-//   <BrowserRouter>
-//     <App/>
-//     </BrowserRouter>,
-//      document.getElementById('root'));
 
     
 

@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-// import {Route, Switch} from 'react-router-dom';
-import {Route, Switch} from 'react-router-dom';
+
+import {Route} from 'react-router-dom';
 import './App.css'
 import Option from './Option/Option';
-
-import dummyStore from './dummy-store'
-// import AddResults from './AddResults/AddResults';
+// import dummyStore from './dummy-store'
 import InputListItem from './InputListItem/InputListItem';
 import Header from './Header/Header';
 import LogInForm from './LogInForm/LogInForm';
@@ -23,10 +21,10 @@ class App extends Component {
     }
   
    }
-   componentDidMount() {
-    setTimeout(()=>this.setState(dummyStore), 3000)
+//    componentDidMount() {
+//     setTimeout(()=>this.setState(dummyStore), 6000)
 
- }
+//  }
 
   updateFilterOption = (event) => {
     this.setState({
@@ -53,7 +51,6 @@ class App extends Component {
         )}
         />
       ))}
-       {/* <Route path="/LoginForm" component={LogInForm} /> */}
 
       </>
     )
@@ -78,8 +75,7 @@ class App extends Component {
         )}
         />
       ))}
-       {/* <Route path="/LoginForm" component={LogInForm} /> */}
-
+      
       </>
     )
   }
@@ -94,24 +90,14 @@ class App extends Component {
       <Header />
     </header>
     <main className='App'>
-       <Switch>
+      <div className ="" >
     <Route exact path='/SignUpForm' component={SignUpForm} />
     <Route exact path='/logInForm' component={LogInForm} /> 
     <Route exact path='/HomePage' component={HomePage}/>
-     {/* <Route exact path={'/InputListItem'} component={InputListItem}/>  */}
     <Route exact path={'/AddResults'} component={AddResults}/>
-    {/* <Route exact path={'/Option'}  component ={Option} />  */}
-    {/* <Option
-       filterOption={this.state.filterOption}
-       handleFilterChange={this.updateFilterOption}/> */}
-       
-       {/* <InputListItem 
-      months={this.props.months}
-      filterOption={this.state.filterOption}/>  */}
-    </Switch> 
-
-{this.renderOptionRoute()}
-{this.renderMainRoute()}
+    </div>
+   <div>{this.renderOptionRoute()}</div>
+   <div>{this.renderMainRoute()}</div>
 
     </main>
 
@@ -119,7 +105,6 @@ class App extends Component {
    
   );
  }
-
 }
 
 export default App;

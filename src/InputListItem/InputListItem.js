@@ -5,14 +5,24 @@ import InputItem from '../InputItem/InputItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CircleButton from '../CircleButton/CircleButton';
 
+
 class InputListItem extends Component {
   render(){
+
         const {filterOption } = this.props;
+        // const list = this.props.months
+        // .filter(month => month.monthName
+        //       && (filterOption === 'All year' || month.monthName === filterOption))
+        // .map((month, key) => <InputItem {...month} key={key} />);
+     
+
          const list = this.props.months
             .filter(month => month.monthName
                   && (filterOption === 'All year' || month.monthName === filterOption))
             .map((month, key) => <InputItem {...month} key={key} />);
-         return (
+         
+         
+            return (
            <div>
           <div className="InputListItem">
              {list}    
