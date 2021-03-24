@@ -92,7 +92,6 @@ class App extends Component {
     </div>
    <div>{this.renderOptionRoute()}</div>
    <div>{this.renderMainRoute()}</div>
-
     </main>
 
     </>
