@@ -6,8 +6,8 @@ class Header extends Component {
     render() {
   return (
     <div className='headerContainer'>
-      <div className="">
-        <Link to='/'className='headerLink'><h2>Diabetes Managing SYstem</h2></Link>
+      <div className="mainTilte">
+        <Link to='/HomePage'className='headerLink'><h2>Diabetes Managing System</h2></Link>
       </div>
       <div className="navButton">
       <div className='logInForm'>
@@ -17,7 +17,7 @@ class Header extends Component {
           <Link to ='/SignUpForm' className='signUpForm' >Register</Link>
       </div>
       <div className='result'>
-          <Link to ='/HomePage' className='signUpForm' >Home Page</Link>
+          <Link to ='/' className='signUpForm' >DEMO Page</Link>
       </div>
       </div>
     </div>

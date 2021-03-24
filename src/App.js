@@ -3,13 +3,12 @@ import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 import './App.css'
 import Option from './Option/Option';
-// import dummyStore from './dummy-store'
 import InputListItem from './InputListItem/InputListItem';
 import Header from './Header/Header';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
 import HomePage from './HomePage/HomePage';
-import AddResults from './AddResults/AddResults'
+
 
 
 
@@ -21,10 +20,6 @@ class App extends Component {
     }
   
    }
-//    componentDidMount() {
-//     setTimeout(()=>this.setState(dummyStore), 6000)
-
-//  }
 
   updateFilterOption = (event) => {
     this.setState({
@@ -94,7 +89,6 @@ class App extends Component {
     <Route exact path='/SignUpForm' component={SignUpForm} />
     <Route exact path='/logInForm' component={LogInForm} /> 
     <Route exact path='/HomePage' component={HomePage}/>
-    <Route exact path={'/AddResults'} component={AddResults}/>
     </div>
    <div>{this.renderOptionRoute()}</div>
    <div>{this.renderMainRoute()}</div>

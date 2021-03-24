@@ -10,12 +10,6 @@ class InputListItem extends Component {
   render(){
 
         const {filterOption } = this.props;
-        // const list = this.props.months
-        // .filter(month => month.monthName
-        //       && (filterOption === 'All year' || month.monthName === filterOption))
-        // .map((month, key) => <InputItem {...month} key={key} />);
-     
-
          const list = this.props.months
             .filter(month => month.monthName
                   && (filterOption === 'All year' || month.monthName === filterOption))
@@ -41,40 +35,6 @@ class InputListItem extends Component {
           </CircleButton>
           </div>
       </div>
-    
-
-
-
-
-
-      // class FilterableList extends Component {
-//   render() {
-//     const { searchTerm, filterOption } = this.props;
-//     const list = this.props.files
-//         .filter(file => file.name.includes(searchTerm)
-//               && (filterOption === 'All' || file.status === filterOption))
-//         .map((file, key) => <ListItem {...file} key={key} />);
-//     return (
-//       <div className="FilterableList">
-//         {list}
-//       </div>
-//     );
-//   }
-// }
-
-
-
-
-
-     
-
-      
-
-      
-
-
-    
-
     );
   }
 }

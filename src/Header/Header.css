@@ -1,8 +1,15 @@
 .headerContainer{
     background-color: darkgrey;
-    height:280px;
-    padding: 5px;
-    
+    height:300px;
+    /* padding: 1px;
+    margin-top:2; */
+    /* text-align: right;   */
+
+}
+h2{
+    color:white;
+    font-size: 40px;
+    text-align: left;
 }
 
 .headerLink {
@@ -46,4 +53,5 @@
 
 .navButton{
     display: inline-block;
+
 }
