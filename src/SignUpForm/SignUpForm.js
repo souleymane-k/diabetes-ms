@@ -13,7 +13,7 @@ export default class SignUpForm extends Component {
        
       >
         <fieldset>
-          <h2>Create an account</h2>
+          <h3>Create an account</h3>
           <label className='signUpForm-form__user-name-label' htmlFor='signUpForm-form__user-name'>
             Username
           </label>

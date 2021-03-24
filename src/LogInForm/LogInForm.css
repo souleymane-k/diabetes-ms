@@ -47,8 +47,10 @@
       margin: 1em;
     }
     
-    h2{
+    h3{
         text-align: center;
+        color:black;
+        margin:2px;
     }
   
   
@@ -72,27 +74,10 @@
     border: 1px solid whitesmoke;
     border-radius: 2px;
     box-shadow: 2px 2px 2px 0px black;
-    /* transition: box-shadow 0.1s; */
+    cursor: pointer;
+    
   }
-    /* &:hover {
-      background-color: $color-overlay-dark;
-      color: $color-text-normal;
-      border: 1px solid $color-quaternary;
-      cursor: pointer;
-    } */
-    /* &:focus {
-      background-color: $color-overlay-dark;
-      color: $color-text-normal;
-      border: 1px solid $color-quaternary;
-      box-shadow: none;
-    } */
-    /* &:active {
-      background-color: $color-overlay-dark;
-      color: $color-text-normal;
-      border: 1px solid $color-secondary;
-    }
-  } */
-  
+    
   /* .login-form__user-name-label{
       background-color: chartreuse;
   } */

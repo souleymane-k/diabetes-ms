@@ -10,7 +10,7 @@ class LogInForm extends Component {
     return (
       <form className="logInform">
         <fieldset>
-          <h2>Login</h2>
+          <h3>Log in</h3>
           <label
             className="login-form__user-name-label"
             htmlFor="login-form__user-name"
