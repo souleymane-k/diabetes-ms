@@ -33,6 +33,7 @@ const MONTHS = [
         { "id":"65","monthName":"January","mealName":"Fasting","result":"75 mg/dl","date":"01/12/2021","description":"nothing eaten"}
 ];
 
+console.log(process.env)
 
 ReactDOM.render(
   <BrowserRouter>
