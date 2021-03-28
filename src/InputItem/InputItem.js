@@ -13,7 +13,7 @@ class InputItem extends Component {
           <div className="InputItem__result">{this.props.result}</div>
           <div className="InputItem__date">{this.props.date}</div>
           <div className="InputItem__desciption">{this.props.description}</div> 
-          <div className="InputItem__diabetes_type">{this.props.Diabetes_type}</div> 
+          <div className="InputItem__diabetes_type">{this.props.dtype}</div> 
         </div>
       </div>
     );
