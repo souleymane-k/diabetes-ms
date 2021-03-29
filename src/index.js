@@ -28,7 +28,7 @@ const MONTHS = [
         { "id":"60","monthName":"November","mealName":"Breakfast","result":"120 mg/dl","date":"01/10/2021","description":" take 2hrs after breakfast. 2 bananas","dtype":"type 1"},
         { "id":"61","monthName":"December","mealName":"Fasting","result":"75 mg/dl","date":"01/12/2021","description":"nothing eaten","dtype":"type 1"},
         { "id":"62","monthName":"January","mealName":"Breakfast","result":"120 mg/dl","date":"01/10/2021","description":" take 2hrs after breakfast. 2 bananas","dtype":"type 1"},
-        { "id":"63","monthName":"May","mealName":"Fasting","result":"75 mg/dl","date":"01/12/2021","description":"nothing eaten","Diabetes-type":"type 1"},
+        { "id":"63","monthName":"May","mealName":"Fasting","result":"75 mg/dl","date":"01/12/2021","description":"nothing eaten","dtype":"type 1"},
         { "id":"64","monthName":"November","mealName":"Breakfast","result":"120 mg/dl","date":"01/10/2021","description":" take 2hrs after breakfast. 2 bananas","dtype":"type 1"},
         { "id":"65","monthName":"January","mealName":"Fasting","result":"75 mg/dl","date":"01/12/2021","description":"nothing eaten","dtype":"type 1"}
 ];
