@@ -8,6 +8,8 @@ import Header from './Header/Header';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
 import HomePage from './HomePage/HomePage';
+import dummyStore from './dummy-store';
+
 
 
 
@@ -18,8 +20,12 @@ class App extends Component {
     this.state = {
       filterOption: ''
     }
-  
    }
+  
+   componentDidMount(){
+    setTimeout(() => this.setState(dummyStore), 600);
+   }
+
 
   updateFilterOption = (event) => {
     this.setState({
