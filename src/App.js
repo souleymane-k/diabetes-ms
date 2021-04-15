@@ -8,7 +8,8 @@ import Header from './Header/Header';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
 import HomePage from './HomePage/HomePage';
-import dummyStore from './dummy-store';
+import config from '../config';
+
 
 
 
@@ -22,9 +23,12 @@ class App extends Component {
     }
    }
   
-   componentDidMount(){
-    setTimeout(() => this.setState(dummyStore), 600);
-   }
+   componentDidMount() {
+    fetch(`${config.API_ENDPOINT}/months`).then((response) => response.json()).then((json)=> this.setState({notes: json}))
+    
+    fetch(`${config.API_ENDPOINT}/results`).then((response) => response.json()).then((json)=> this.setState({folders:  json}))
+
+ }
 
 
   updateFilterOption = (event) => {
@@ -37,7 +41,7 @@ class App extends Component {
     const{filterOption} = this.state;
     return(
       <>
-      {['/'].map(path =>(
+      {['/','/months/:month_id'].map(path =>(
         <Route
         exact
         key={path}

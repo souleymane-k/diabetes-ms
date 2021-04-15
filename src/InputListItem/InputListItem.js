@@ -8,13 +8,11 @@ import CircleButton from '../CircleButton/CircleButton';
 
 class InputListItem extends Component {
   render(){
-
         const {filterOption } = this.props;
-         const list = this.props.months
-            .filter(month => month.monthName
-                  && (filterOption === 'All year' || month.monthName === filterOption))
+        const list = this.props.months
+            .filter(month => month.month_taken
+                  && (filterOption === 'All year' || month.month_taken === filterOption))
             .map((month, key) => <InputItem {...month} key={key} />);
-         
          
             return (
            <div>
@@ -44,3 +42,11 @@ InputListItem.defaultProps = {
 };
 
 export default InputListItem;
+
+
+// const {filterOption } = this.props;
+//          const list = this.props.months
+//             .filter(month => month.monthName
+//                   && (filterOption === 'All year' || month.monthName === filterOption))
+//             .map((month, key) => <InputItem {...month} key={key} />);
+         
