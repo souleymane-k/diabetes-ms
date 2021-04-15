@@ -8,7 +8,7 @@ import Header from './Header/Header';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
 import HomePage from './HomePage/HomePage';
-import config from '../config';
+import config from './config';
 
 
 
