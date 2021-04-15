@@ -56,7 +56,7 @@ class App extends Component {
         )}
         />
       ))}
-
+<Route path="/results/:result_id" component={InputListItem} />
       </>
     )
   }
