@@ -8,7 +8,7 @@ import Header from './Header/Header';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
 import HomePage from './HomePage/HomePage';
-import config from './config';
+import {API_ENDPOINT} from './config';
 
 
 
@@ -24,9 +24,9 @@ class App extends Component {
    }
   
    componentDidMount() {
-    fetch(`${config.API_ENDPOINT}/months`).then((response) => response.json()).then((json)=> this.setState({notes: json}))
+    fetch(`${API_ENDPOINT}/months`).then((response) => response.json()).then((json)=> this.setState({months: json}))
     
-    fetch(`${config.API_ENDPOINT}/results`).then((response) => response.json()).then((json)=> this.setState({folders:  json}))
+    fetch(`${API_ENDPOINT}/results`).then((response) => response.json()).then((json)=> this.setState({results:  json}))
 
  }
 
