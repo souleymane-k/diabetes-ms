@@ -41,7 +41,7 @@ class App extends Component {
     const{filterOption} = this.state;
     return(
       <>
-      {['/','/months/:month_id'].map(path =>(
+      {['/','/results/:result_id'].map(path =>(
         <Route
         exact
         key={path}
