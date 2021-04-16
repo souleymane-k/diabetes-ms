@@ -5,9 +5,9 @@ import './App.css'
 import Option from './Option/Option';
 import InputListItem from './InputListItem/InputListItem';
 import Header from './Header/Header';
-import LogInForm from './LogInForm/LogInForm';
-import SignUpForm from './SignUpForm/SignUpForm';
-import HomePage from './HomePage/HomePage';
+// import LogInForm from './LogInForm/LogInForm';
+// import SignUpForm from './SignUpForm/SignUpForm';
+// import HomePage from './HomePage/HomePage';
 import config from './config';
 
 
@@ -65,7 +65,7 @@ class App extends Component {
     const{filterOption} = this.state;
     return(
       <>
-      {['/'].map(path =>(
+      {['/','/months/:month_id'].map(path =>(
         <Route
         exact
         key={path}
@@ -95,11 +95,11 @@ class App extends Component {
       <Header />
     </header>
     <main className='App'>
-      <div className ="" >
+      {/* <div className ="" >
     <Route exact path='/SignUpForm' component={SignUpForm} />
     <Route exact path='/logInForm' component={LogInForm} /> 
     <Route exact path='/HomePage' component={HomePage}/>
-    </div>
+    </div> */}
    <div>{this.renderOptionRoute()}</div>
    <div>{this.renderMainRoute()}</div>
     </main>
