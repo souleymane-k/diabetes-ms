@@ -1,0 +1,141 @@
+.headerContainer{
+    background-color: darkgrey;
+    height:100px;
+    max-width:80%;
+    /* padding: 1px;
+    margin-top:2; */
+    /* text-align: right;   */
+}
+h2{
+    color:white;
+    font-size: 20px;
+    text-align: left;
+}
+
+.LogoLink {
+    text-decoration: none;
+    padding: 5px;
+}
+/* .loginForm{
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+    color:black;
+    background:white;
+} */
+
+/* .registerForm{
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+    color:black;
+    background:white;
+} */
+/* .homepage{
+    text-decoration: none;
+    padding: 5px;
+    border: solid;
+    border-radius: 10px;
+    margin: 5px;
+    color:black;
+    background:white;
+} */
+.result{
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 10px;
+    color:black;
+    background:white; 
+}
+.LoginPage{
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 10px;
+    color:black;
+    background:white;
+}
+.registrationPage{
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 10px;
+    color:black;
+    background:white;
+}
+
+
+/* .navButton{
+    display: block;
+
+} */
+
+/*.......................Navigation..................................... */
+.navButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 15px;
+    list-style-type: none;
+    margin-bottom:10px;
+  }
+  
+  
+  .navButton a{
+    color: black;
+    text-decoration: none;
+    margin: 0 20px 0 0;
+    font-family: 'Montserrat Alternates', sans-serif;
+  
+  }
+  .navButton a:hover {
+    color: black;
+  }
+  .navButton:last-child a {
+    margin-right:10px;
+  }
+
+  /* ............@media Query...........................*/
+
+@media all and (min-width: 800px) {
+    header {
+      display: flex;
+      height:100px;
+      justify-content: space-between;
+    }
+  
+    .logo {
+      margin: 14px 0 14px 20px;
+      padding-top: 0;
+      font-size: 42px;
+    }
+    
+    .navButton {
+      margin-top: 14px;
+    }
+  }
+  /* Media Query and type  for screen grater or equal to 600px*/
+  @media all and (max-width: 640px) {
+    .headerContainer {
+      width: 70%;
+      margin: auto;
+      height:250px;
+      flex-direction: row;
+      margin-bottom:15px;
+    }
+    h2{
+        color:white;
+        font-size: 20px;
+        text-align: center;
+    }
+  
+    .group {
+      flex-direction: row;
+    }
+  }

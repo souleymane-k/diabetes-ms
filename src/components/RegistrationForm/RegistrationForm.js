@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import './SignUpForm.css';
+import './RegistrationForm.css';
 
 
-export default class SignUpForm extends Component {
+export default class RegistrationForm extends Component {
 
   render() {
     
