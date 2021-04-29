@@ -10,7 +10,7 @@ class LoginForm extends Component {
   static contextType = AuthContext
   state = {
     error: null,
-    email: '',
+    username: '',
     password: ''
   }
   handleSubmit = async (e) => {
@@ -19,8 +19,8 @@ class LoginForm extends Component {
     const {setLoading} = this.props.appContext
     try {
       setLoading(true)
-      const {email, password} = this.state;
-      const response = await AuthApiService.login(email, password)
+      const {username, password} = this.state;
+      const response = await AuthApiService.login(username, password)
       setLoading(false)
 
       this.context.login(response.authToken)
@@ -47,12 +47,12 @@ class LoginForm extends Component {
       <div className='error-msg'>{this.state.error}</div>
         
       <div className='form-group'>
-        <label htmlFor='email'>Email</label>
+        <label htmlFor='username'>Username</label>
         <input 
-        id='email' 
-        name='email' 
+        id='username' 
+        name='username' 
         type='text' 
-        value={this.state.email} 
+        value={this.state.username} 
         onChange={this.handleChange}/>
       </div>
 

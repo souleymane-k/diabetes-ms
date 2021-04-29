@@ -14,13 +14,13 @@ export default class RegistrationForm extends Component {
       >
         <fieldset>
           <h3>Create an account</h3>
-          <label className='signUpForm-form__user-name-label' htmlFor='signUpForm-form__user-name'>
+          <label className='signUpForm-form__username-label' htmlFor='signUpForm-form__username'>
             Username
           </label>
           <input
             type='text'
             name='user_name'
-            id='SignUpForm-form__user-name'
+            id='SignUpForm-form__username'
             placeholder='username'
             required
           />
