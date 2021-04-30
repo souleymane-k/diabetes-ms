@@ -1,11 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+
+
 .headerContainer{
     background-color: darkgrey;
     height:100px;
-    max-width:80%;
+    max-width:100%;
     /* padding: 1px;
     margin-top:2; */
     /* text-align: right;   */
 }
+
 h2{
     color:white;
     font-size: 20px;
@@ -71,20 +77,16 @@ h2{
 }
 
 
-/* .navButton{
-    display: block;
-
-} */
 
 /*.......................Navigation..................................... */
-.navButton {
+/* .navButton {
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding-bottom: 15px;
     list-style-type: none;
     margin-bottom:10px;
-  }
+  } */
   
   
   .navButton a{
@@ -98,12 +100,12 @@ h2{
     color: black;
   }
   .navButton:last-child a {
-    margin-right:10px;
+    margin-right:2px;
   }
 
   /* ............@media Query...........................*/
 
-@media all and (min-width: 800px) {
+@media all and (min-width: 640px) {
     header {
       display: flex;
       height:100px;
@@ -117,13 +119,19 @@ h2{
     }
     
     .navButton {
-      margin-top: 14px;
-    }
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-bottom: 15px;
+        list-style-type: none;
+        margin: 14px 0 14px 20px;
+        text-align: right;
+      }
   }
-  /* Media Query and type  for screen grater or equal to 600px*/
+  /* Media Query and type  for screen smaller or equal to 640px*/
   @media all and (max-width: 640px) {
     .headerContainer {
-      width: 70%;
+      width: 90%;
       margin: auto;
       height:250px;
       flex-direction: row;
@@ -134,8 +142,12 @@ h2{
         font-size: 20px;
         text-align: center;
     }
-  
-    .group {
-      flex-direction: row;
+    .navButton{
+        justify-content: center;
+        text-align:center;
     }
+  
+    /* .group {
+      flex-direction: row;
+    } */
   }

@@ -45,9 +45,9 @@ class LoginForm extends Component {
     return (
       <form className='js-login-form' action='#' onSubmit={(e) => this.handleSubmit(e)}>
       <div className='error-msg'>{this.state.error}</div>
-        
+      <fieldset>
       <div className='form-group'>
-        <label htmlFor='username'>Username</label>
+        <label htmlFor='username' >Username</label>
         <input 
         id='username' 
         name='username' 
@@ -69,6 +69,7 @@ class LoginForm extends Component {
       <div className='form-controls'>
         <button className='button full outline' type='submit'>Login</button>
       </div>
+      </fieldset>
     </form>
     );
   }

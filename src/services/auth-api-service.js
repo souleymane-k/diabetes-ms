@@ -2,14 +2,33 @@ import config from '../config';
 import TokenService from '../services/TokenService';
 
 const AuthApiService = {
-  async login(email, password){
-    const loginData = {email, password};
+  async login(username, password){
+    const loginData = {username, password};
     const res = await fetch(`${config.API_ENDPOINT}/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type':'application/json'
       },
       body: JSON.stringify(loginData)
+    })
+    .then(res =>
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    )
+    .then(res => {
+      /*
+        whenever a logint is performed:
+        1. save the token in local storage
+        2. queue auto logout when the user goes idle
+        3. queue a call to the refresh endpoint based on the JWT's exp value
+      */
+      TokenService.saveAuthToken(res.authToken)
+      // IdleService.regiserIdleTimerResets()
+      TokenService.queueCallbackBeforeExpiry(() => {
+        AuthApiService.postRefreshToken()
+      })
+      return res
     })
 
     if (!res.ok) {

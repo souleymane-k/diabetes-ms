@@ -1,15 +1,41 @@
 import React, {Component} from 'react';
 import './RegistrationForm.css';
+import AuthApiService from '../../services/auth-api-service'
 
 
 export default class RegistrationForm extends Component {
 
+  static defaultProps = {
+    onLoginSuccess: () => {}
+  }
+
+  state = { error: null }
+
+  handleSubmitJwtAuth = ev => {
+    ev.preventDefault()
+    this.setState({ error: null })
+    const { username, password, email } = ev.target
+
+    AuthApiService.createUser({
+      username: username.value,
+      password: password.value,
+      email:email.value,
+    })
+      .then(res => {
+        username.value = ''
+        password.value = ''
+        this.props.onLoginSuccess()
+      })
+      .catch(res => {
+        this.setState({ error: res.error })
+      })
+  }
   render() {
     
     return (
       
       <form
-        className='signUpForm-form'
+        className='signUpForm-form' onSubmit={this.handleSubmitJwtAuth}
        
       >
         <fieldset>
@@ -19,7 +45,7 @@ export default class RegistrationForm extends Component {
           </label>
           <input
             type='text'
-            name='user_name'
+            name='username'
             id='SignUpForm-form__username'
             placeholder='username'
             required

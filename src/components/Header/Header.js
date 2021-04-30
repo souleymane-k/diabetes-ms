@@ -26,14 +26,14 @@ class Header extends Component {
 }
  export default Header;
 
- <header>
-  <div class="logo"><h1>Souleymane Kone</h1></div>
-    <nav>
-       <ul class="menu">
-         <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#project">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-   </nav>
-</header>
+//  <header>
+//   <div class="logo"><h1>Souleymane Kone</h1></div>
+//     <nav>
+//        <ul class="menu">
+//          <li><a href="#home">Home</a></li>
+//           <li><a href="#about">About</a></li>
+//           <li><a href="#project">Projects</a></li>
+//         <li><a href="#contact">Contact</a></li>
+//       </ul>
+//    </nav>
+// </header>

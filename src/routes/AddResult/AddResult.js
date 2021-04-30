@@ -35,7 +35,7 @@ import config  from '../../config.js'
       error:null,  
     };
   }
-  // "date_tested":"01-03-2021",
+
    static contextType = ApiContext;
 
   updateMonth_taken = (month_taken) => {
@@ -79,7 +79,7 @@ import config  from '../../config.js'
         headers: {
          'content-type': 'application/json',
          'Accept': 'application/json',
-         'authorization':`bearer ${config.tokenKey}`
+         'authorization':`bearer ${config.API_KEY}`
         }
     })
       .then( res => {
@@ -112,6 +112,7 @@ import config  from '../../config.js'
 
   return (
     <form className="add-result" onSubmit={e => this.handleSubmit(e)}>
+      <fieldset>
         <div>
           <h2>New Result</h2>
         </div>
@@ -204,6 +205,7 @@ import config  from '../../config.js'
           <button type='submit' className='addResultButton'>Submit</button>
           <button type='cancel' className='addResultButton'>Cancel</button>
         </div> */}
+        </fieldset>
       </form>
    
   )
