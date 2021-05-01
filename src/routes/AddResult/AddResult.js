@@ -23,6 +23,10 @@ import config  from '../../config.js'
           value:" ",
           touched: false
       },
+    //   month_id: {
+    //     value:" ",
+    //     touched: false
+    // },
       description: {
         value:" ",
         touched: false
@@ -50,6 +54,9 @@ import config  from '../../config.js'
   updateDate_tested = (date_tested) => {
     this.setState({ date_tested: { value: date_tested, touched: true } });
   }
+  // updateMonth_id = (month_id) => {
+  //   this.setState({ month_id: { value: month_id, touched: true } });
+  // }
   updateDescription = (description) => {
     this.setState({ description: { value: description, touched: true } });
   }
@@ -59,13 +66,14 @@ import config  from '../../config.js'
 
   handleSubmit = e => {
     e.preventDefault();
-    const { month_taken, meal_taken, result_read,date_tested, description, diabetestype} = e.target;
+    const { month_taken, meal_taken, result_read,date_tested,description, diabetestype} = e.target;
   
     const result = {
       month_taken:month_taken.value,
       meal_taken:meal_taken.value,
       result_read:result_read.value,
       date_tested:date_tested.value,
+      // month_id:month_id.value,
       description:description.value,
       diabetestype:diabetestype.value,
       }
@@ -79,7 +87,7 @@ import config  from '../../config.js'
         headers: {
          'content-type': 'application/json',
          'Accept': 'application/json',
-         'authorization':`bearer ${config.API_KEY}`
+         'authorization':`bearer ${config.API_TOKEN}`
         }
     })
       .then( res => {
@@ -96,9 +104,10 @@ import config  from '../../config.js'
         meal_taken.value='';
         result_read.value='';
         date_tested.value='';
+        // month_id.value = '';
         description.value='';
         diabetestype.value='';
-        this.context.addResults(data);
+        this.context.addResult(data);
         this.props.history.push('/')
         
       })

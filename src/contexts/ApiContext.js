@@ -4,7 +4,7 @@ export default React.createContext({
   postLogin: () => {},
   postUser: () => {},
   deleteUser: () => {},
-  getRestaurants: () => {},
-  addRestaurants: () => {},
-  deleteRestaurants: () => {}
+  getResults: () => {},
+  addResults: () => {},
+  deleteResults: () => {}
 })

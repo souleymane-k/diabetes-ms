@@ -11,6 +11,7 @@ const AuthContext = React.createContext({
   currentUser: null,
   error: null
 });
+
 export default AuthContext
 
 export class AuthProvider extends Component {
