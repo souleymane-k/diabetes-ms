@@ -1,10 +1,14 @@
 import React from 'react';
 
 export default React.createContext({
-  postLogin: () => {},
-  postUser: () => {},
+  results:[],
+  months:[],
+  login: () => {},
+  createUser: () => {},
   deleteUser: () => {},
+  addMonth:()=>{},
   getResults: () => {},
   addResults: () => {},
-  deleteResults: () => {}
+  deleteResults: () => {},
+  updateResults:()=>{}
 })

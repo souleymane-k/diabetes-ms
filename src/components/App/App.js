@@ -6,6 +6,7 @@ import LandingPage from '../../routes/LandingPage/LandingPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import AddResult from '../../routes/AddResult/AddResult'
+import AddMonth from '../../routes/AddMonth/AddMonth'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import Header from '../Header/Header'
 import AuthContext from '../../contexts/AuthContext'
@@ -30,6 +31,8 @@ class App extends Component {
     )
   }
 
+  
+
   componentWillUnmount() {
     this.context.clearError();
   }
@@ -42,13 +45,14 @@ class App extends Component {
           <div id='page-wrap'>
             <main className='app-main' role='main'>
               {this.context.error ? this.renderAuthError() : undefined}
-
               <Switch>
                 <PublicOnlyRoute exact path={'/'} component={LandingPage}/>
                 <PublicOnlyRoute path={'/login'} component={LoginPage}/>
                 <PublicOnlyRoute path={'/register'} component={RegistrationPage}/>
                 {/* <PrivateRoute path={'/AddResult'} component={AddResult}/> */}
+                {/* <PrivateRoute path={'/AddMonth'} component={AddMonth}/> */}
                 <Route path={'/AddResult'} component={AddResult}/>
+                <Route path={'/AddMonth'} component={AddMonth}/>
                 <Route component={NotFoundPage}/>
               </Switch>
             </main>

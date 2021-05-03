@@ -19,6 +19,9 @@ class Header extends Component {
       <div className='result'>
           <Link to ='/AddResult' className='result'>ADD Result</Link>
       </div>
+      <div className='month'>
+          <Link to ='/AddMonth' className='month'>ADD Month</Link>
+      </div>
     </div>
     </div>
   );

@@ -2,23 +2,21 @@ import config from '../config';
 import TokenService from '../services/TokenService';
 
 const AuthApiService = {
-  login(username, password) {
+  async login(username, password) {
     const loginData = {username, password};
-    return fetch(`${config.API_ENDPOINT}/auth/login`, {
+    const res = await fetch(`${config.API_ENDPOINT}/auth/login`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
       },
       body: JSON.stringify(loginData)
-    })
-    .then( res => {
-      return (!res.ok) 
-        ? res.json().then( e => Promise.reject(e))
-        : res.json().then(res => {
-            TokenService.saveAuthToken(res.authToken)
-            TokenService.saveVisitedObj();
-          });
-    })
+    });
+    return await ((!res.ok)
+      ? res.json().then(e => Promise.reject(e))
+      : res.json().then(res_1 => {
+        TokenService.saveAuthToken(res_1.authToken);
+        TokenService.saveVisitedObj();
+      }));
   },
 
   // async login(username, password){

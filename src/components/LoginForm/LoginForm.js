@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
 import AuthApiService from '../../services/auth-api-service'
+import ApiContext from '../../contexts/ApiContext';
 import { Button, Input } from '../Direction/Direction'
 
 export default class LoginForm extends Component {
   static defaultProps = {
     onLoginSuccess: () => {}
   }
-
+  static contextType = ApiContext;
   state = { error: null }
 
   handleSubmitJwtAuth = ev => {
     ev.preventDefault()
     this.setState({ error: null })
-    const { username, password } = ev.target
+    const {username, password} = ev.target
 
-    AuthApiService.postLogin({
+    AuthApiService.login({
       username: username.value,
       password: password.value,
     })
@@ -38,7 +39,8 @@ export default class LoginForm extends Component {
         <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
-        <div className='username'>
+        <fieldset>
+        <div className='form-group'>
           <label htmlFor='LoginForm__username'>
             Username
           </label>
@@ -48,7 +50,7 @@ export default class LoginForm extends Component {
             id='LoginForm__username'>
           </Input>
         </div>
-        <div className='password'>
+        <div className='form-group'>
           <label htmlFor='LoginForm__password'>
             Password
           </label>
@@ -62,6 +64,7 @@ export default class LoginForm extends Component {
         <Button type='submit'>
           Login
         </Button>
+        </fieldset>
       </form>
     )
   }
