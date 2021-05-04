@@ -23,10 +23,14 @@ import config  from '../../config.js'
           value:" ",
           touched: false
       },
-      monthChoice: {
+      month_id: {
         value:" ",
         touched: false
     },
+    userid: {
+      value:" ",
+      touched: false
+  },
       description: {
         value:" ",
         touched: false
@@ -54,9 +58,12 @@ import config  from '../../config.js'
   updateDate_tested = (date_tested) => {
     this.setState({ date_tested: { value: date_tested, touched: true } });
   }
-  // updateMonth_id = (month_id) => {
-  //   this.setState({ month_id: { value: month_id, touched: true } });
-  // }
+  updateMonth_id = (month_id) => {
+    this.setState({ month_id: { value: month_id, touched: true } });
+  }
+  updateUserid = (userid) => {
+    this.setState({userid: { value: userid, touched: true } });
+  }
   updateDescription = (description) => {
     this.setState({ description: { value: description, touched: true } });
   }
@@ -69,14 +76,15 @@ import config  from '../../config.js'
 
   handleSubmit = e => {
     e.preventDefault();
-    const { month_taken, meal_taken, result_read,date_tested,monthChoice,description, diabetestype} = e.target;
+    const { month_taken, meal_taken, result_read,date_tested,month_id,userid,description, diabetestype} = e.target;
   
     const result = {
       month_taken:month_taken.value,
       meal_taken:meal_taken.value,
       result_read:result_read.value,
       date_tested:date_tested.value,
-      month_id:monthChoice.value,
+      month_id:month_id.value,
+      userid:userid.value,
       description:description.value,
       diabetestype:diabetestype.value,
       }
@@ -106,7 +114,7 @@ import config  from '../../config.js'
         meal_taken.value='';
         result_read.value='';
         date_tested.value='';
-        monthChoice.value = '';
+        month_id.value = '';
         description.value='';
         diabetestype.value='';
         this.context.addResult(data);
@@ -120,9 +128,9 @@ import config  from '../../config.js'
 
 
   render() {
-    const monthsObj = this.context.months;
-    const monthOptions = monthsObj.map((month,i)=>
-   <option value={month.id} key={i}>{month.month_taken}</option>);
+  //   const monthsObj = this.context.months;
+  //   const monthOptions = monthsObj.map((month,i)=>
+  //  <option value={month.id} key={i}>{month.month_taken}</option>);
   return (
     <form className="add-result" onSubmit={e => this.handleSubmit(e)}>
       <fieldset>
@@ -174,8 +182,30 @@ import config  from '../../config.js'
         onChange={e => this.updateDate_tested(e.target.value)}
       />
         </div>
+        <div className='form-group'>
+        <label htmlFor="month_id">month_id*</label>
+        <input
+        type="integer"
+        className="form__input"
+        name="month_id"
+        id="month_id"
+        required
+        onChange={e => this.updateMonth_id(e.target.value)}
+      />
+        </div>
+        <div className='form-group'>
+        <label htmlFor="Userid">Userid*</label>
+        <input
+        type="integer"
+        className="form__input"
+        name="Userid"
+        id="Userid"
+        required
+        onChange={e => this.updateUserid(e.target.value)}
+      />
+        </div>
 
-        <div className="form-group">
+        {/* <div className="form-group">
             <label htmlFor="month-options">Select Month *</label>
             <select
                 id="monthChoice"
@@ -184,7 +214,7 @@ import config  from '../../config.js'
                 <option value="">Select one...</option>
                 {monthOptions}
             </select>
-          </div>
+          </div> */}
 
         <div className='form-group'>
         <label htmlFor="description">Description *</label>

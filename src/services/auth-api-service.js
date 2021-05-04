@@ -2,7 +2,7 @@ import config from '../config';
 import TokenService from '../services/TokenService';
 
 const AuthApiService = {
-  async login(username, password) {
+  async postLogin(username, password) {
     const loginData = {username, password};
     const res = await fetch(`${config.API_ENDPOINT}/auth/login`, {
       method: 'POST',

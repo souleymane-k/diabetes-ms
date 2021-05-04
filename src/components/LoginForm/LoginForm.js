@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import AuthApiService from '../../services/auth-api-service'
 import ApiContext from '../../contexts/ApiContext';
-import { Button, Input } from '../Direction/Direction'
+//import { Button, Input } from '../Direction/Direction'
 
 export default class LoginForm extends Component {
   static defaultProps = {
@@ -15,7 +15,7 @@ export default class LoginForm extends Component {
     this.setState({ error: null })
     const {username, password} = ev.target
 
-    AuthApiService.login({
+    AuthApiService.postLogin({
       username: username.value,
       password: password.value,
     })
@@ -44,26 +44,30 @@ export default class LoginForm extends Component {
           <label htmlFor='LoginForm__username'>
             Username
           </label>
-          <Input
+          <input
             required
             name='username'
+            type="text"
             id='LoginForm__username'>
-          </Input>
+          </input>
         </div>
         <div className='form-group'>
           <label htmlFor='LoginForm__password'>
             Password
           </label>
-          <Input
+          <input
             required
             name='password'
             type='password'
             id='LoginForm__password'>
-          </Input>
+          </input>
         </div>
-        <Button type='submit'>
+        <div className='form-controls'>
+        <button className='button full outline' type='submit'>Login</button>
+       </div>
+        {/* <button type='submit'>
           Login
-        </Button>
+        </button> */}
         </fieldset>
       </form>
     )
