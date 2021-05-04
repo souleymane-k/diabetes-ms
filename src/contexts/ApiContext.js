@@ -3,7 +3,7 @@ import React from 'react';
 export default React.createContext({
   results:[],
   months:[],
-  login: () => {},
+  postLogin: () => {},
   createUser: () => {},
   deleteUser: () => {},
   addMonth:()=>{},

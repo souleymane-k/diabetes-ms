@@ -195,12 +195,12 @@ import config  from '../../config.js'
       />
         </div>
         <div className='form-group'>
-        <label htmlFor="Userid">Userid*</label>
+        <label htmlFor="userid">Userid*</label>
         <input
         type="integer"
         className="form__input"
-        name="Userid"
-        id="Userid"
+        name="userid"
+        id="userid"
         required
         onChange={e => this.updateUserid(e.target.value)}
       />

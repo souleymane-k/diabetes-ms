@@ -34,10 +34,7 @@ export default class RegistrationForm extends Component {
     
     return (
       
-      <form
-        className='signUpForm-form' onSubmit={this.handleSubmitJwtAuth}
-       
-      >
+      <form className='signUpForm-form' onSubmit={this.handleSubmitJwtAuth}>
         <fieldset>
           <h3>Create an account</h3>
           <label className='signUpForm-form__username-label' htmlFor='signUpForm-form__username'>
