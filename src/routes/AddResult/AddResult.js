@@ -115,6 +115,7 @@ import config  from '../../config.js'
         result_read.value='';
         date_tested.value='';
         month_id.value = '';
+        userid.value = '';
         description.value='';
         diabetestype.value='';
         this.context.addResult(data);
