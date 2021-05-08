@@ -1,5 +1,6 @@
 import config from '../config.js'
 
+
 const TokenService = {
   saveAuthToken(token) {
     window.localStorage.setItem(config.API_TOKEN, token)
@@ -20,6 +21,9 @@ const TokenService = {
   hasVisitedObj() {
     const hasVisited = window.localStorage.getItem('visitedObj');
     return !!hasVisited;
+  },
+  makeBasicAuthToken(username, password) {
+    return window.btoa(`${username}:${password}`)
   }
 }
 

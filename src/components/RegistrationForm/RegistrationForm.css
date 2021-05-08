@@ -5,7 +5,7 @@
 
 
 fieldset {
-    max-width: 100%;
+    max-width:200px;
     margin: 0 0 0 0;
     /* display: flex; */
     border: none;
@@ -21,5 +21,14 @@ fieldset {
     margin: 5px;
     color:black;
     background:white;
+}
+.form-group{
+  margin: 10px 10px  10px 10px;
+}
+input{
+width:100%;
+line-height: 2em;
+padding:0.5em;
+border-radius: 2px;
 }
 

@@ -10,7 +10,6 @@ const UserApiService = {
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
       }
     })
-
     if (!res.ok) {
       return res.json().then(e => Promise.reject(e))
     }

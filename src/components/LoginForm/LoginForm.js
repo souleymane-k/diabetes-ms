@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import AuthApiService from '../../services/auth-api-service'
 import ApiContext from '../../contexts/ApiContext';
-//import { Button, Input } from '../Direction/Direction'
+import TokenService from '../../services/TokenService'
+// import { Button, Input} from '../Direction/Direction'
 
 export default class LoginForm extends Component {
   static defaultProps = {
@@ -14,13 +15,17 @@ export default class LoginForm extends Component {
     ev.preventDefault()
     this.setState({ error: null })
     const {username, password} = ev.target
+    console.log('login form submitted')
+     console.log({ username, password })
 
-    AuthApiService.postLogin({
-      username: username.value,
-      password: password.value,
-    })
+    AuthApiService.postLogin(
+      username.value,
+      password.value,
+    )
       .then(res => {
+        TokenService.saveAuthToken(res.authToken)
         username.value = ''
+        this.context.setUser(true)
         password.value = ''
         this.props.onLoginSuccess()
       })
@@ -32,10 +37,7 @@ export default class LoginForm extends Component {
   render() {
     const { error } = this.state
     return (
-      <form
-        className='LoginForm'
-        onSubmit={this.handleSubmitJwtAuth}
-      >
+      <form className='login-form' onSubmit={this.handleSubmitJwtAuth}>
         <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
@@ -63,99 +65,75 @@ export default class LoginForm extends Component {
           </input>
         </div>
         <div className='form-controls'>
-        <button className='button full outline' type='submit'>Login</button>
+        <button   className='button full outline' type='submit'>Login</button>
        </div>
-        {/* <button type='submit'>
-          Login
-        </button> */}
         </fieldset>
       </form>
     )
   }
 }
 
+//////
+// import React, { Component } from 'react'
+// import { Button, Input } from '../Direction/Direction'
 
-
-
-
-
-
-
-// import React, {Component} from 'react';
-// import './LoginForm.css';
-// import AuthContext from '../../contexts/AuthContext'
-// import AuthApiService from '../../services/auth-api-service'
-// import { withAppContext } from '../../contexts/AppContext';
-
-
-
-// class LoginForm extends Component {
-//   static contextType = AuthContext
-//   state = {
-//     error: null,
-//     username: '',
-//     password: ''
-//   }
-//   handleSubmit = async (e) => {
-//     e.preventDefault();
-//     this.setState({error: null})
-//     const {setLoading} = this.props.appContext
-//     try {
-//       setLoading(true)
-//       const {username, password} = this.state;
-//       const response = await AuthApiService.login(username, password)
-//       setLoading(false)
-
-//       this.context.login(response.authToken)
-//       this.context.setCurrentUser(response.user)
-//     } catch(err) {
-//       this.setState({error: err.message}, setLoading(false))
-//     }
+// export default class LoginForm extends Component {
+//   static defaultProps = {
+//     onLoginSuccess: () => {}
 //   }
 
-//   componentWillUnmount() {
-//     this.setState({error: null})
-//   }
+//   state = { error: null }
 
-//   handleChange = ({ target: { name, value } }) => {
-//     this.setState({
-//       [name]: value
-//     })
+//   handleSubmitBasicAuth = ev => {
+//     ev.preventDefault()
+//     const { username, password } = ev.target
+
+//     console.log('login form submitted')
+//     console.log({ username, password })
+
+//     username.value = ''
+//     password.value = ''
+//     this.props.onLoginSuccess()
 //   }
 
 //   render() {
-    
+//     const { error } = this.state
 //     return (
-//       <form className='js-login-form' action='#' onSubmit={(e) => this.handleSubmit(e)}>
-//       <div className='error-msg'>{this.state.error}</div>
-//       <fieldset>
-//       <div className='form-group'>
-//         <label htmlFor='username' >Username</label>
-//         <input 
-//         id='username' 
-//         name='username' 
-//         type='text' 
-//         value={this.state.username} 
-//         onChange={this.handleChange}/>
-//       </div>
-
-//       <div className='form-group'>
-//         <label htmlFor='password'>Password</label>
-//         <input 
-//         id='password' 
-//         name='password' 
-//         type='password' 
-//         value={this.state.password} 
-//         onChange={this.handleChange}/>
-//       </div>
-
-//       <div className='form-controls'>
-//         <button className='button full outline' type='submit'>Login</button>
-//       </div>
-//       </fieldset>
-//     </form>
-//     );
+//       <form
+//         className='LoginForm'
+//         onSubmit={this.handleSubmitBasicAuth}
+//       >
+//         <div role='alert'>
+//           {error && <p className='red'>{error}</p>}
+//         </div>
+//         <div className='username'>
+//           <label htmlFor='LoginForm__username'>
+//             Username
+//           </label>
+//           <Input
+//             name='username'
+//             id='LoginForm__username'>
+//           </Input>
+//         </div>
+//         <div className='password'>
+//           <label htmlFor='LoginForm__password'>
+//             Password
+//           </label>
+//           <Input
+//             name='password'
+//             type='password'
+//             id='LoginForm__password'>
+//           </Input>
+//         </div>
+//         <Button type='submit'>
+//           Login
+//         </Button>
+//       </form>
+//     )
 //   }
 // }
 
-// export default withAppContext(LoginForm);
+
+
+
+

@@ -7,3 +7,9 @@ fieldset {
     box-shadow: -1px 1px 5px 4px black; 
     padding: 3px;
   }
+  h2{
+    color:red;
+  }
+  .form-group{
+    margin: 10px 10px  10px 10px;
+  }

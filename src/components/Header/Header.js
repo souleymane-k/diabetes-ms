@@ -1,42 +1,134 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import TokenService from '../../services/TokenService';
 import './Header.css';
 
-class Header extends Component {
-    render() {
-  return (
-    <div className='headerContainer'>
-      <div className="LogoLink">
-        <Link to='/'className='LogoLink'><h2>Diabetes Managing System</h2></Link>
-      </div>
-      <div className="navButton">
-      <div className='LoginPage'>
-          <Link to ='/login' className='LoginPage'> Sign In</Link>
-      </div>
-      <div className='registrationPage'>
-          <Link to ='/register' className='registrationPage'>Sign Up</Link>
-      </div>
-      <div className='result'>
-          <Link to ='/AddResult' className='result'>ADD Result</Link>
-      </div>
-      <div className='month'>
-          <Link to ='/AddMonth' className='month'>ADD Month</Link>
-      </div>
-    </div>
-    </div>
-  );
-}
-}
- export default Header;
+import AuthContext from '../../contexts/AuthContext';
 
-//  <header>
-//   <div class="logo"><h1>Souleymane Kone</h1></div>
-//     <nav>
-//        <ul class="menu">
-//          <li><a href="#home">Home</a></li>
-//           <li><a href="#about">About</a></li>
-//           <li><a href="#project">Projects</a></li>
-//         <li><a href="#contact">Contact</a></li>
-//       </ul>
-//    </nav>
-// </header>
+export default class Header extends React.Component {
+  static contextType = AuthContext;
+
+  handleLogoutClick = () => {
+    TokenService.clearAuthToken();
+    this.context.setUsername(null);
+    this.context.setUserId(null);
+  }
+  // to={`/${this.context.usernname}/AddResult`
+  renderLogoutLink() {
+    return (
+      <div className='site-nav__dir--logged-in'>
+        <Link
+          to={'/AddResult'}
+          >
+          New Result
+          </Link>
+        <Link
+          onClick={this.handleLogoutClick}
+          to='/'>
+          Logout
+          </Link>
+      </div>
+    );
+  };
+
+  renderLoginLink() {
+    return (
+      <div className='site-nav__dir'>
+        <Link
+          to='/register'> Register</Link>
+        <Link to='/login'> Login </Link>
+      </div>
+    );
+  };
+
+  render() {
+    return (
+      <nav className='site-nav'>
+        <h1>
+          <Link to='/'>
+          Diabetes Managing System
+          </Link>
+        </h1>
+        {
+          TokenService.hasAuthToken()
+            ? this.renderLogoutLink()
+            : this.renderLoginLink()
+        }
+      </nav>
+    );
+  };
+};
+
+
+
+
+
+// import React, { Component } from 'react';
+// import {Link } from 'react-router-dom';
+// import ApiContext from '../../contexts/ApiContext'
+// import './Header.css';
+
+// class Header extends Component {
+
+//   static contextType = ApiContext
+//   logout=()=>{
+//     this.context.setUser(null)
+//   }
+  
+//     render() { 
+//   return (
+//     <div className='headerContainer'>
+
+//       <div className="LogoLink">
+//         <Link to='/'className='LogoLink'><h2>Diabetes Managing System</h2></Link>
+//       </div>
+//       <div className="navButton">
+
+//         {/* {this.context.user ?(<>
+          
+//           <div className='result'>
+//           <Link to ='/AddResult' className='result'>ADD Result</Link>
+//       </div>
+//       <div className='logout'>
+//           <button onClick={this.logout} className='month'>Logout</button>
+//       </div>
+//         </>)
+//         :
+//         (<>
+//           <div className='LoginPage'>
+//           <Link to ='/login' className='LoginPage'> Sign In</Link>
+//       </div>
+
+//       <div className='registrationPage'>
+//           <Link to ='/register' className='registrationPage'>Sign Up</Link>
+//       </div>
+//         </>)} */}
+//         {this.context.user ?(<>
+          
+//           <div className='result'>
+//           <Link to ='/AddResult' className='result'>ADD Result</Link>
+//       </div>
+//       <div className='logout'>
+//           <button onClick={this.logout} className='month'>Logout</button>
+//       </div>
+//         </>)
+//         :
+//         (<>
+//           <div className='LoginPage'>
+//           <Link to ='/login' className='LoginPage'> Sign In</Link>
+//       </div>
+
+//       <div className='registrationPage'>
+//           <Link to ='/register' className='registrationPage'>Sign Up</Link>
+//       </div>
+//         </>)}
+
+//     </div>
+    
+//     </div>
+//   );
+// }
+// }
+//  export default Header;
+
+

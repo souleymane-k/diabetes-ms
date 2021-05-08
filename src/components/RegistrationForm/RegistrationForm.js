@@ -37,6 +37,7 @@ export default class RegistrationForm extends Component {
       <form className='signUpForm-form' onSubmit={this.handleSubmitJwtAuth}>
         <fieldset>
           <h3>Create an account</h3>
+          <div className="form-group">
           <label className='signUpForm-form__username-label' htmlFor='signUpForm-form__username'>
             Username
           </label>
@@ -47,6 +48,8 @@ export default class RegistrationForm extends Component {
             placeholder='username'
             required
           />
+          </div>
+          <div className="form-group">
           <label className='signUpForm-form__email-label' htmlFor='signUpForm-form__email'>
             Email
           </label>
@@ -56,6 +59,8 @@ export default class RegistrationForm extends Component {
             id='SignUpForm__email'
             required
           />
+          </div>
+          <div className="form-group">
           <label className='signUpForm-form__password-label' htmlFor='signUpForm-form__password'>
             Password
           </label>
@@ -66,6 +71,8 @@ export default class RegistrationForm extends Component {
             placeholder='password'
             required
           />
+          </div>
+          <div className="form-group">
           <label className='SignUpForn-form__password-repeat-label' htmlFor='signUpForm-form__password-repeat'>
             Confirm Password
           </label>
@@ -76,6 +83,7 @@ export default class RegistrationForm extends Component {
             placeholder='password'
             required
           />
+          </div>
           <input type='submit' value='submit' />
         </fieldset>
   

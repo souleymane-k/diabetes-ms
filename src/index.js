@@ -3,20 +3,28 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'
 import './index.css';
 import App from './components/App/App';
-import { AuthProvider } from './contexts/AuthContext'
+ import { AuthProvider } from './contexts/AuthContext'
 import { AppProvider } from './contexts/AppContext'
 // import AppError from './components/AppError/AppError'
 
 ReactDOM.render(
-    <BrowserRouter>
-      <AuthProvider>
-        <AppProvider>
-          <App />
-        </AppProvider>
-      </AuthProvider>
-    </BrowserRouter>,
-  document.getElementById('root')
-);
+  <BrowserRouter>
+    <AuthProvider>
+    <AppProvider>
+      <App />
+      </AppProvider>
+    </AuthProvider>
+  </BrowserRouter>,
+  document.getElementById('root'));
+
+// ReactDOM.render(
+//     <BrowserRouter>
+//         <AppProvider>
+//           <App />
+//         </AppProvider>
+//     </BrowserRouter>,
+//   document.getElementById('root')
+// );
 
 
 // import React from 'react'

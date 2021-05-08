@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ApiContext from '../../contexts/ApiContext';
+import TokenService from '../../services/TokenService'
 import './AddResult.css';
 import config  from '../../config.js'
 
@@ -97,7 +98,7 @@ import config  from '../../config.js'
         headers: {
          'content-type': 'application/json',
          'Accept': 'application/json',
-         'authorization':`bearer ${config.API_TOKEN}`
+         'authorization':`bearer ${TokenService.getAuthToken}`
         }
     })
       .then( res => {
@@ -129,9 +130,6 @@ import config  from '../../config.js'
 
 
   render() {
-  //   const monthsObj = this.context.months;
-  //   const monthOptions = monthsObj.map((month,i)=>
-  //  <option value={month.id} key={i}>{month.month_taken}</option>);
   return (
     <form className="add-result" onSubmit={e => this.handleSubmit(e)}>
       <fieldset>
@@ -213,7 +211,7 @@ import config  from '../../config.js'
                 name="monthChoice"
                 onChange={e =>this.updateMonthSelected(e.target.value)}>
                 <option value="">Select one...</option>
-                {monthOptions}
+               
             </select>
           </div> */}
 
@@ -244,6 +242,7 @@ import config  from '../../config.js'
             <button
               type="submit"
               className="form__button"
+              // onClick={this.handleSubmit}
             >
               
               Save Result
