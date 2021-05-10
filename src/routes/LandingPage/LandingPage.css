@@ -6,8 +6,9 @@
 
 h1{
     width:100%;
-    background:red;
+    /* background:red; */
     color:white;
+    margin: 20px;
     
 }
 
@@ -44,6 +45,7 @@ h1{
         flex-direction: row;
         text-align: center;
         max-width:90%;
+        margin-top: 40px;
         margin-left: 40px;
       }
     /* header {

@@ -6,6 +6,7 @@ import './Header.css';
 import AuthContext from '../../contexts/AuthContext';
 
 export default class Header extends React.Component {
+  
   static contextType = AuthContext;
 
   handleLogoutClick = () => {
@@ -17,14 +18,10 @@ export default class Header extends React.Component {
   renderLogoutLink() {
     return (
       <div className='site-nav__dir--logged-in'>
-        <Link
-          to={'/AddResult'}
-          >
-          New Result
+        <Link to={'/AddResult'} className='addResultlink'>
+          Add Result
           </Link>
-        <Link
-          onClick={this.handleLogoutClick}
-          to='/'>
+        <Link onClick={this.handleLogoutClick} to='/' className='logoutlink'>
           Logout
           </Link>
       </div>
@@ -34,9 +31,8 @@ export default class Header extends React.Component {
   renderLoginLink() {
     return (
       <div className='site-nav__dir'>
-        <Link
-          to='/register'> Register</Link>
-        <Link to='/login'> Login </Link>
+        <Link to='/register' className='addResultlink'> Register</Link>
+        <Link to='/login' className='addResultlink'> Login </Link>
       </div>
     );
   };

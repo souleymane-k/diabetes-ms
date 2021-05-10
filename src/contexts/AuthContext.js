@@ -139,6 +139,7 @@ export class AuthProvider extends React.Component {
       setSignOut: this.setSignOut,
       setUsername: this.setUsername,
       username: this.state.username,
+      password:this.state.password,
       setUserId: this.setUserId,
       userid: this.state.userid,
       setUser: this.setUser,
