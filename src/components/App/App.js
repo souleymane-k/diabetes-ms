@@ -66,6 +66,7 @@ class App extends Component {
                 <PublicOnlyRoute exact path={'/'} component={LandingPage}/>
                 <PublicOnlyRoute path={'/login'} component={LoginPage}/>
                 <PublicOnlyRoute path={'/register'} component={RegistrationPage}/>
+                <PrivateRoute path={'/home'} component={LandingPage}/>
                 <PrivateRoute path={'/Result'} component={Result}/>
                 <PrivateRoute path={'/AddResult'} component={AddResult}/>
                 {/* <Route exact path={'/'} component={LandingPage}/>
