@@ -39,13 +39,13 @@ export default class Result extends React.Component {
 
   render() {
     
-    const {id,result_read,date_tested,description} = this.props
+    const {id,month_taken,meal_taken,result_read,date_tested,month_id,userid,description,diabetestype} = this.props
     
     return (
       <div className='Result'>
         <h2 className='Result__result_read'>
           <Link to={`/results/${id}`}>
-            {result_read}
+            {}
           </Link>
         </h2>
         <button
