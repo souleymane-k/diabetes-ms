@@ -112,7 +112,6 @@ import config  from '../../config.js'
         headers: {
          'content-type': 'application/json',
          'Accept': 'application/json',
-        //  'authorization':`bearer ${config.API_TOKEN}`
          'authorization':`bearer ${TokenService.getAuthToken}`
         }
     })

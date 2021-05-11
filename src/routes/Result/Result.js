@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import ApiContext from '../ApiContext'
-import config from '../config'
+import ApiContext from '../../contexts/ApiContext';
+import config  from '../../config.js'
 import './Result.css'
 
 export default class Result extends React.Component {
@@ -14,9 +14,9 @@ export default class Result extends React.Component {
 
   handleClickDelete = e => {
     e.preventDefault()
-    const resultId = this.props.id
+    const result_id = this.props.id
 
-    fetch(`${config.API_ENDPOINT}/results/${resultId}` , {
+    fetch(`${config.API_ENDPOINT}/results/${result_id}` , {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
@@ -29,8 +29,8 @@ export default class Result extends React.Component {
         return res.json()
       })
       .then(() => {
-        this.context.deleteResult(resultId)
-        this.props.onDeleteResult(resultId)
+        this.context.deleteResult(result_id)
+        this.props.onDeleteResult(result_id)
       })
       .catch(error => {
         console.error({ error })
@@ -38,15 +38,14 @@ export default class Result extends React.Component {
   }
 
   render() {
-    const {result} = this.props
-    // const {month_taken,meal_taken,result_read,date_tested,month_id,userid,description,diabetestype} = this.props
-    // const { name, id} = this.props
-    // const {name, id, modified} = this.props
+    
+    const {id,result_read,date_tested,description} = this.props
+    
     return (
       <div className='Result'>
-        <h2 className='Result__title'>
-          <Link to={`/result/${id}`}>
-            {result}
+        <h2 className='Result__result_read'>
+          <Link to={`/results/${id}`}>
+            {result_read}
           </Link>
         </h2>
         <button
@@ -56,8 +55,26 @@ export default class Result extends React.Component {
         >
           <FontAwesomeIcon icon='trash-alt' />
           {' '}
-          remove
+          Delete
         </button>
+        <div className='Result__dates'>
+          <div className='Result__dates-date_tested'>
+          Date_tested
+            {' '}
+            <span className='Result'>
+              {date_tested}
+            </span> 
+          </div> 
+         </div>
+         <div className='Result__description'>
+          <div className='Result__results_description'>
+          Description
+            {' '}
+            <span className='Description'>
+              {description}
+            </span> 
+          </div> 
+         </div>
       </div>
 
     )

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './RegistrationForm.css';
 import AuthApiService from '../../services/auth-api-service'
-
+// import {Redirect} from 'react-router-dom'
 
 export default class RegistrationForm extends Component {
 
@@ -30,10 +30,11 @@ export default class RegistrationForm extends Component {
         this.setState({ error: res.error })
       })
   }
+  // return <Redirect to='login'/>
+
   render() {
     
     return (
-      
       <form className='signUpForm-form' onSubmit={this.handleSubmitJwtAuth}>
         <fieldset>
           <h3>Create an account</h3>
@@ -84,7 +85,8 @@ export default class RegistrationForm extends Component {
             required
           />
           </div>
-          <input type='submit' value='submit' />
+          <button type='submit' > Submit</button>
+          {/* <input type='submit' value='submit' /> */}
         </fieldset>
   
       </form>
