@@ -15,6 +15,8 @@ export default class Header extends React.Component {
     this.context.setUser(null);
     this.context.setUserId(null);
   }
+
+  
   // to={`/${this.context.usernname}/AddResult`
   renderLogoutLink() {
     return (

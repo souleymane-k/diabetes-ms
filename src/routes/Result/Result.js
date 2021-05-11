@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ApiContext from '../../contexts/ApiContext';
 import config  from '../../config.js'
 import './Result.css'
@@ -45,18 +44,9 @@ export default class Result extends React.Component {
       <div className='Result'>
         <h2 className='Result__result_read'>
           <Link to={`/results/${id}`}>
-            {}
+            {result}
           </Link>
         </h2>
-        <button
-          className='Result__delete'
-          type='button'
-          onClick={this.handleClickDelete}
-        >
-          <FontAwesomeIcon icon='trash-alt' />
-          {' '}
-          Delete
-        </button>
         <div className='Result__month_taken'>
           <div className='Result__results_description'>
           month_taken
@@ -130,6 +120,14 @@ export default class Result extends React.Component {
             </span> 
           </div> 
          </div>
+         <button
+          className='Result__delete'
+          type='button'
+          onClick={this.handleClickDelete}
+        >
+          {' '}
+          Delete
+        </button>
       </div>
 
     )
