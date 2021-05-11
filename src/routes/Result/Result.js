@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types';
 import ApiContext from '../../contexts/ApiContext';
 import config  from '../../config.js'
 import './Result.css'
@@ -44,7 +43,7 @@ export default class Result extends React.Component {
       <div className='Result'>
         <h2 className='Result__result_read'>
           <Link to={`/results/${id}`}>
-            {result}
+            {month_taken}
           </Link>
         </h2>
         <div className='Result__month_taken'>
@@ -132,8 +131,4 @@ export default class Result extends React.Component {
 
     )
   }
-}
-Result.propTypes = {
-  name: PropTypes.string,
-  onDeleteResult: PropTypes.func.isRequired
 }
