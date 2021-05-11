@@ -66,7 +66,7 @@ export default class Result extends React.Component {
           </div> 
          </div>
          <div className='Result__result_read'>
-          <div className='Result__dates_result_read'>
+          <div className='Result__result_read'>
           result_read
             {' '}
             <span className='Result'>
