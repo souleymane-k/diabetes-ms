@@ -103,16 +103,25 @@ import config  from '../../config.js'
       description:description.value,
       diabetestype:diabetestype.value,
       }
+      console.log('message')
    
   this.setState({ error: null })
-
+  console.log(`${config.API_ENDPOINT}/results`,{
+    method: 'POST',
+    body: JSON.stringify(result),
+    headers: {
+     'content-type': 'application/json',
+     'Accept': 'application/json',
+     'authorization':`bearer ${TokenService.getAuthToken}`
+    }
+})
   fetch(`${config.API_ENDPOINT}/results`,{
         method: 'POST',
         body: JSON.stringify(result),
         headers: {
          'content-type': 'application/json',
          'Accept': 'application/json',
-         'authorization':`bearer ${TokenService.getAuthToken}`
+         'authorization':`bearer ${TokenService.getAuthToken()}`
         }
     })
       .then( res => {
@@ -134,11 +143,12 @@ import config  from '../../config.js'
         userid.value = '';
         description.value='';
         diabetestype.value='';
-        this.context.addResult(data);
-        this.props.history.push('/')
+        // this.context.addResult(data);
+        this.props.history.push('/home')
         
       })
       .catch(error => {
+        console.log(error)
           this.setState({ error })
       })
   }

@@ -23,18 +23,22 @@ export default class LoginForm extends Component {
       password.value,
     )
       .then(res => {
+  
         TokenService.saveAuthToken(res.authToken)
         username.value = ''
         this.context.setUser(true)
         password.value = ''
+        console.log('hello world')
         this.props.onLoginSuccess()
       })
       .catch(res => {
+        console.log(res)
         this.setState({ error: res.error })
       })
   }
 
   render() {
+    console.log('login form')
     const { error } = this.state
     return (
       <form className='login-form' onSubmit={this.handleSubmitJwtAuth}>

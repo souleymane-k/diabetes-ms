@@ -38,9 +38,9 @@ class App extends Component {
 
   
 
-  componentWillUnmount() {
-    this.context.clearError();
-  }
+  // componentWillUnmount() {
+  //   this.context.clearError();
+  // }
   
   setUser=(user)=>{
     this.setState({user})
@@ -66,13 +66,8 @@ class App extends Component {
                 <PublicOnlyRoute exact path={'/'} component={LandingPage}/>
                 <PublicOnlyRoute path={'/login'} component={LoginPage}/>
                 <PublicOnlyRoute path={'/register'} component={RegistrationPage}/>
-                <PrivateRoute path={'/home'} component={LandingPage}/>
-                <PrivateRoute path={'/Result'} component={Result}/>
+                <PrivateRoute path={'/home'} component={Result}/>
                 <PrivateRoute path={'/AddResult'} component={AddResult}/>
-                {/* <Route exact path={'/'} component={LandingPage}/>
-                <Route path={'/login'} component={LoginPage}/>
-                <Route path={'/register'} component={RegistrationPage}/>
-                <Route path={'/AddResult'} component={AddResult}/>  */}
                 <Route component={NotFoundPage}/>
               </Switch>
             </main>

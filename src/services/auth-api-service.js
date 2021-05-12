@@ -16,6 +16,7 @@ const AuthApiService = {
       : res.json().then(res_1 => {
         TokenService.saveAuthToken(res_1.authToken);
         TokenService.saveVisitedObj();
+        return res_1
       }));
       
   },

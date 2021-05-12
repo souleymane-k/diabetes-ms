@@ -1,134 +1,51 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import ApiContext from '../../contexts/ApiContext';
-import config  from '../../config.js'
+import NoteResult from '../../components/NoteResult/NoteResult'
+import ApiContext from '../../contexts/ApiContext'
+import { findResult } from '../../results-helpers'
 import './Result.css'
-
-export default class Result extends React.Component {
-  static defaultProps ={
-    onDeleteResult: () => {},
+//NotePageMain =result
+export default class NotePageMain extends React.Component {
+  static defaultProps = {
+    match: {
+      params: {}
+    }
   }
-  static contextType = ApiContext;
+  static contextType = ApiContext
 
-  handleClickDelete = e => {
-    e.preventDefault()
-    const result_id = this.props.id
-
-    fetch(`${config.API_ENDPOINT}/results/${result_id}` , {
-      method: 'DELETE',
-      headers: {
-        'content-type': 'application/json',
-        'authorization':`bearer ${config.API_TOKEN}`
-      },
-    })
-      .then(res => {
-        if (!res.ok)
-          return res.json().then(e => Promise.reject(e))
-        return res.json()
-      })
-      .then(() => {
-        this.context.deleteResult(result_id)
-        this.props.onDeleteResult(result_id)
-      })
-      .catch(error => {
-        console.error({ error })
-      })
+  handleDeleteResult = resultid => {
+    this.props.history.push(`/`)
   }
+  //this.context.addFolder(data);
+  //console.log(this.props.history);
+  //this.props.history.push('/')
 
   render() {
-    
-    const {id,month_taken,meal_taken,result_read,date_tested,month_id,userid,description,diabetestype} = this.props
-    
+    const { results=[] } = this.context
+    const { resultId } = this.props.match.params
+    const result = findResult(results, resultId) || {content: '' }
     return (
-      <div className='Result'>
-        <h2 className='Result__result_read'>
-          <Link to={`/results/${id}`}>
-            {month_taken}
-          </Link>
-        </h2>
-        <div className='Result__month_taken'>
-          <div className='Result__results_description'>
-          month_taken
-            {' '}
-            <span className='month_taken'>
-              {month_taken}
-            </span> 
-          </div> 
-         </div>
-         <div className='Result__meal_taken'>
-          <div className='Result__results_meal_taken'>
-          meal_taken
-            {' '}
-            <span className='meal_taken'>
-              {meal_taken}
-            </span> 
-          </div> 
-         </div>
-         <div className='Result__result_read'>
-          <div className='Result__result_read'>
-          result_read
-            {' '}
-            <span className='Result'>
-              {result_read}
-            </span> 
-          </div> 
-         </div>
-         <div className='Result__result_dates'>
-          <div className='Result__result_date__tested'>
-          date__tested
-            {' '}
-            <span className='Result_results_date__tested'>
-              {date_tested}
-            </span> 
-          </div> 
-         </div>
-         <div className='Result__month_id'>
-          <div className='Result__results_month_id'>
-          month_id
-            {' '}
-            <span className='month_id'>
-              {month_id}
-            </span> 
-          </div> 
-         </div>
-         <div className='Result__userid'>
-          <div className='Result__results_userid'>
-          userid
-            {' '}
-            <span className='userid'>
-              {userid}
-            </span> 
-          </div> 
-         </div>
-        
-         <div className='Result__description'>
-          <div className='Result__results_description'>
-          Description
-            {' '}
-            <span className='Description'>
-              {description}
-            </span> 
-          </div> 
-         </div>
-         <div className='Result__diabetestype'>
-          <div className='Result__dates_diabetestype'>
-          diabetestype
-            {' '}
-            <span className='Result'>
-              {diabetestype}
-            </span> 
-          </div> 
-         </div>
-         <button
-          className='Result__delete'
-          type='button'
-          onClick={this.handleClickDelete}
-        >
-          {' '}
-          Delete
-        </button>
-      </div>
+      <section className='NoteResult'>
+      {/* {id,month_taken,meal_taken,result_read,date_tested,month_id,userid,description,diabetestype} = this.props */}
 
+        <NoteResult
+          id={result.id}
+          month_taken={result.month_taken}
+          meal_taken={result.meal_taken}
+          result_read={result.result_read}
+          date_tested={result.date_tested}
+          month_id={result.month_id}
+          userid={result.userid}
+          description={result.description}
+          diabetestype={result.diabetestype}
+          onDeleteResult={this.handleDeleteResult}
+        />
+        <div className='NoteResult__content'>
+        {result.content.split(/\n \r|\n/).map((para, i) =>
+          <p key={i}>{para}</p>
+        )}
+      </div>
+      </section>
     )
   }
+  
 }
