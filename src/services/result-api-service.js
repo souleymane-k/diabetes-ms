@@ -17,9 +17,10 @@ const ResultsApiService = {
           : res.json()
       )
   },
-  getUserResults(userid) {
-    return fetch(`${config.API_ENDPOINT}/results/users/${userid}`, {
+  getUserResults() {
+    return fetch(`${config.API_ENDPOINT}/results`, {
       headers: {
+        // 'Content-Type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       }
     })
@@ -36,11 +37,7 @@ const ResultsApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       }
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : 1
-      )
+      
   },
   getResultById(result_id) {
     return fetch(`${config.API_ENDPOINT}/results/${result_id}`, {

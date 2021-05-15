@@ -8,5 +8,6 @@ export default React.createContext({
   getResults: () => {},
   addResult: () => {},
   deleteResult: () => {},
+  onDeleteResult: () => {},
   updateResult:()=>{}
 })

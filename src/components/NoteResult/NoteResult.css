@@ -1,46 +1,55 @@
 .Result {
     background-color: white;
     color: black;
-    margin-bottom: 8px;
-    max-width: 380px;
+    margin: 15px;
+    max-width: 280px;
     padding: 8px 0 8px 8px;
-    position: relative;
+    border: solid;
+    border-radius: 10px;
+    /* position: relative; */
+  }
+  h2{
+      text-align: center;
   }
   
-  .Result__delete{
-    background-color: #041a3a;
+  .Result_delete{
+    background-color:green;
     border: 0;
-    color:red;
-    float: right;
+    color:white;
     font-size: 12px;
-    position: relative;
-    
+    width:60px;
+    margin: 10px;
   }
-  .Result__delete:hover {
+  .Result_delete:hover {
     background-color: #bd0909;
     color: white;
     cursor: pointer;
     font-weight: bold;
   }
+
+  /* span{
+      border:solid;
+  } */
+
   
-  .Result__result_read{
+  /* .Result__result_read{
     font-size: 20px;
     margin: 0;
     max-width: 80%;
     min-height: 24px;
-  }
-  .Result__result_read a {
+  } */
+  /* .Result__result_read a {
     color: #cacaca;
     display: block;
     text-decoration: none;
-  }
-  .Result__result_read a:hover {
+  } */
+  /* .Result__result_read a:hover {
     color: #FFB72F;
-  }
+  } */
   
-  .Result__date_tested {
+  /* .Result__date_tested {
     bottom: 8px;
     color: #a7a5a5;
     font-size: 14px;
     position: absolute;
-  }
+  } */

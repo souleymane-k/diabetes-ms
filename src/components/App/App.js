@@ -10,6 +10,8 @@ import Result from '../../routes/Result/Result'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import Header from '../Header/Header'
 import ApiContext from '../../contexts/ApiContext'
+import config  from '../../config.js'
+// import {filterResult} from '../results-helpers'
 // import AuthContext from '../../contexts/AuthContext'
 // import { withAppContext } from '../../contexts/AppContext'
 import TokenService from '../../services/TokenService'
@@ -18,6 +20,7 @@ import './App.css';
 class App extends Component {
   
   state={
+    results:[],
     user:TokenService.hasAuthToken()
   }
 
@@ -37,6 +40,23 @@ class App extends Component {
   }
 
   
+  componentDidMount() {
+    fetch(`${config.API_ENDPOINT}/results`).then((response) => response.json()).then((json)=> this.setState({results: json}))
+    
+    // fetch(`${config.API_ENDPOINT}/folders`).then((response) => response.json()).then((json)=> this.setState({folders:  json}))
+
+
+ }
+ handleDeleteNote = resultId => {
+  this.setState({
+      results: this.state.results.filter(result => result.id !== resultId)
+  });
+};
+handleAddResult = result => {
+  this.setState({
+      results: [...this.state.results, result]
+  })
+}
 
   // componentWillUnmount() {
   //   this.context.clearError();
