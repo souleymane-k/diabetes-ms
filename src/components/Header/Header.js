@@ -16,23 +16,29 @@ export default class Header extends React.Component {
     this.context.setUserId(null);
   }
 
-  
+
   // to={`/${this.context.usernname}/AddResult`
   renderLogoutLink() {
     return (
       <div className='site-nav__dir--logged-in'>
       
+        <Link to={'/AddMonth'} className='addMonthlink'>
+          Add Month
+          </Link>
+          {' '}
         <Link to={'/AddResult'} className='addResultlink'>
           Add Result
           </Link>
+          {' '}
           
         <Link onClick={this.handleLogoutClick} to='/' className='logoutlink'>
           Logout
           </Link>
-
-          <Link to={'/Result'} className='resultlink'>
+        
+          {/* <Link to={'/Result'} className='resultlink'>
              Result
-          </Link>
+          </Link> */}
+  
       </div>
     );
   };

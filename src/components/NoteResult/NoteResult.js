@@ -50,7 +50,7 @@ export default class Result extends React.Component {
           month_taken
 
           {'  '}
-          
+
             <span className='month_taken'>
               {month_taken}
             </span> 

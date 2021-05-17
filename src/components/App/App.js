@@ -6,6 +6,7 @@ import LandingPage from '../../routes/LandingPage/LandingPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import AddResult from '../../routes/AddResult/AddResult'
+import AddMonth from '../../routes/AddMonth/AddMonth'
 import Result from '../../routes/Result/Result'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import Header from '../Header/Header'
@@ -43,7 +44,7 @@ class App extends Component {
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/results`).then((response) => response.json()).then((json)=> this.setState({results: json}))
     
-    // fetch(`${config.API_ENDPOINT}/folders`).then((response) => response.json()).then((json)=> this.setState({folders:  json}))
+    fetch(`${config.API_ENDPOINT}/months`).then((response) => response.json()).then((json)=> this.setState({months:  json}))
 
 
  }
@@ -55,6 +56,11 @@ class App extends Component {
 handleAddResult = result => {
   this.setState({
       results: [...this.state.results, result]
+  })
+}
+handleAddMonth = month => {
+  this.setState({
+      results: [...this.state.results, month]
   })
 }
 
@@ -87,7 +93,9 @@ handleAddResult = result => {
                 <PublicOnlyRoute path={'/login'} component={LoginPage}/>
                 <PublicOnlyRoute path={'/register'} component={RegistrationPage}/>
                 <PrivateRoute path={'/home'} component={Result}/>
+                {/* <PrivateRoute path={'/Result'} component={Result}/> */}
                 <PrivateRoute path={'/AddResult'} component={AddResult}/>
+                <PrivateRoute path={'/AddMonth'} component={AddMonth}/>
                 <Route component={NotFoundPage}/>
               </Switch>
             </main>

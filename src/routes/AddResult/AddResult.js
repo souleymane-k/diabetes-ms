@@ -98,7 +98,6 @@ import config  from '../../config.js'
       result_read:result_read.value,
       date_tested:date_tested.value,
       month_id:month_id.value,
-      // monthChoice: monthChoice.value,
       userid:userid.value,
       description:description.value,
       diabetestype:diabetestype.value,
@@ -133,19 +132,18 @@ import config  from '../../config.js'
         return res.json()
       })
       
-      .then(data => {
+      .then( data => {
         month_taken.value = '';
         meal_taken.value='';
         result_read.value='';
         date_tested.value='';
-        // monthChoice.value='';
         month_id.value = '';
         userid.value = '';
         description.value='';
         diabetestype.value='';
-        // this.context.addResult(data);
+        this.context.addResult(data);
         this.props.history.push('/home')
-        
+        // this.context.addResult(data);
       })
       .catch(error => {
         console.log(error)
