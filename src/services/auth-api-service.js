@@ -29,7 +29,6 @@ const AuthApiService = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify(userData)
     })
