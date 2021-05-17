@@ -7,7 +7,8 @@ const AuthApiService = {
     const res = await fetch(`${config.API_ENDPOINT}/auth/login`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify(loginData)
     });
@@ -27,7 +28,8 @@ const AuthApiService = {
     const res = await fetch(`${config.API_ENDPOINT}/users`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify(userData)
     })
