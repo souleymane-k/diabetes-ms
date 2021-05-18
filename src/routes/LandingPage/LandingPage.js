@@ -1,6 +1,6 @@
 import React from 'react';
 import './LandingPage.css';
-import Souleymane from '../souleymane-3.jpg'
+// import Souleymane from '../../souleymane-3.jpg'
 
 export default function LandingPage() {
   return (
