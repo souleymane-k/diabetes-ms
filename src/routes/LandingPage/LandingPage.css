@@ -3,6 +3,9 @@
     height: 100%;
     margin-top: 12.5%;
     background: url(../../souleymane-3.jpg);
+    background-position: 80% 80%;
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 
 h1{

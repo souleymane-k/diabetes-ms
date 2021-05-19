@@ -92,7 +92,7 @@ handleAddMonth = month => {
                 <PublicOnlyRoute exact path={'/'} component={LandingPage}/>
                 <PublicOnlyRoute path={'/login'} component={LoginPage}/>
                 <PublicOnlyRoute path={'/register'} component={RegistrationPage}/>
-                <PrivateRoute path={'/home'} component={Result}/>
+                <Route path={'/home'} component={Result}/>
                 {/* <PrivateRoute path={'/Result'} component={Result}/> */}
                 <PrivateRoute path={'/AddResult'} component={AddResult}/>
                 <PrivateRoute path={'/AddMonth'} component={AddMonth}/>

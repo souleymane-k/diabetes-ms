@@ -111,7 +111,7 @@ import config  from '../../config.js'
     headers: {
      'content-type': 'application/json',
      'Accept': 'application/json',
-     'authorization':`bearer ${TokenService.getAuthToken}`
+     'authorization':`bearer ${TokenService.getAuthToken()}`
     }
 })
   fetch(`${config.API_ENDPOINT}/results`,{
@@ -153,9 +153,6 @@ import config  from '../../config.js'
 
 
   render() {
-      //  const monthsObj = this.context.months;
-      //   const monthOptions = monthsObj.map((month,i)=>
-      //  <option value={month.id} key={i}>{month.name}</option>);
   return (
     <form className="add-result" onSubmit={e => this.handleSubmit(e)}>
       <fieldset>
