@@ -4,6 +4,8 @@ import ApiContext from '../../contexts/ApiContext'
 import ResultApiService from '../../services/result-api-service'
 import { findResult } from '../../results-helpers'
 import './Result.css'
+
+
 export default class NotePageMain extends React.Component {
   static defaultProps = {
     match: {

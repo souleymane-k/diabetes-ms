@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import AuthApiService from '../../services/auth-api-service'
 import ApiContext from '../../contexts/ApiContext';
 import TokenService from '../../services/TokenService'
-// import { Button, Input} from '../Direction/Direction'
+import './LoginForm.css'
+
 
 export default class LoginForm extends Component {
   static defaultProps = {
@@ -45,7 +46,7 @@ export default class LoginForm extends Component {
         <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
-        <fieldset>
+        <fieldset className="loginForm">
         <div className='form-group'>
           <label htmlFor='LoginForm__username'>
             Username
@@ -54,6 +55,7 @@ export default class LoginForm extends Component {
             required
             name='username'
             type="text"
+            placeholder='username'
             id='LoginForm__username'>
           </input>
         </div>
@@ -65,11 +67,12 @@ export default class LoginForm extends Component {
             required
             name='password'
             type='password'
+            placeholder='password'
             id='LoginForm__password'>
           </input>
         </div>
         <div className='form-controls'>
-        <button   className='button full outline' type='submit'>Login</button>
+        <button   className='submitButton' type='submit'>Login</button>
        </div>
         </fieldset>
       </form>

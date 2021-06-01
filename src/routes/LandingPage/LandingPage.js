@@ -3,8 +3,10 @@ import './LandingPage.css';
 // import Souleymane from '../../souleymane-3.jpg'
 
 export default function LandingPage() {
+  // <img src={Souleymane} alt="maPhoto"></img>
   return (
     <section className='homePage'>
+      {/* <img src={Souleymane} alt="maPhoto"></img> */}
       <div className="firtssection">
       <h3>What is DMS?</h3>
       <p>DMS is a tool for people in need to record and report their glucose level for personnel use. Recording Your daily diabetes test result with additional comments
@@ -21,5 +23,7 @@ They can classify those data by refencing the year, the month, the date and the 
         To start your healthy and preventive actions please sign up </p>
       </div>
     </section>
+  
+    
   )
 };

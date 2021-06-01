@@ -1,158 +1,111 @@
 *{
     box-sizing: border-box;
+    /* background-image: url(../../souleymane-3.jpg); */
+    /* text-align: center; */
 }
 
-/* 
-.headerContainer{
-    background-color: #808080;
-    height:100px;
-    max-width:90%;
-    margin: 5px 5px 100px 50px;
-   
+
+.site-nav{
+  position:relative;
+  margin: 0;
+  height: 100px;
+  background-color: #EAF6F6;
+  width: 100%;
+  /* background-image: url(../../souleymane-3.jpg);  */
 }
 
-h2{
-    color:white;
-    font-size: 20px;
-    text-align: left;
+
+.titlelink{
+  position:absolute;
+  font-size: 30px;
+  margin-top: -20px;
+  /* margin-bottom: 60px; */
+
+
 }
 
-.LogoLink {
-    text-decoration: none;
-    padding: 5px;
-}
-
-.result{
-    text-decoration: none;
-    padding: 5px;
-    border-radius: 10px;
-    margin: 5px;
-    font-size: 10px;
-    color:black;
-    background:white; 
-}
-.month{
-  text-decoration: none;
-  padding: 5px;
+.registerLink{
+  position:absolute;
+  right:80px;
+  padding:2px;
+  border:solid black;
+  width:80px;
+  height: 30px;
+  text-align: center;
   border-radius: 10px;
-  margin: 5px;
-  font-size: 10px;
-  color:black;
-  background:white; 
+ 
 }
-.LoginPage{
-    text-decoration: none;
-    padding: 5px;
-    border-radius: 10px;
-    margin: 5px;
-    font-size: 10px;
-    color:black;
-    background:white;
+.addResultlink{
+  position:absolute;
+  right:80px;
+  padding:2px;
+  border:solid black;
+  width:80px;
+  height: 30px;
+  text-align: center;
+  border-radius: 10px;
 }
-.registrationPage{
-    text-decoration: none;
-    padding: 5px;
-    border-radius: 10px;
-    margin: 5px;
-    font-size: 10px;
-    color:black;
-    background:white;
-} */
+.addResultlink:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+.logoutlink{
+  position:absolute;
+  right:10px;
+  padding:2px;
+  border:solid;
+  width:60px; 
+  height: 30px;
+  text-align: center;
+  border-radius: 10px;
+}
+.logoutlink:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid;
+  cursor: pointer;
+}
 
 
+.registerLink:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid;
+  cursor: pointer;
+}
+.loginLink{
+  position:absolute;
+  right:10px;
+  padding:2px;
+  border:solid;
+  width:60px; 
+  height: 30px;
+  text-align: center;
+  border-radius: 10px;
+ 
+}
+.loginLink:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid;
+  cursor: pointer;
+}
 
-/*.......................Navigation..................................... */
- /* .navButton {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-bottom: 15px;
-    list-style-type: none;
-    margin-bottom:10px;
-  } 
-  
-  
-  .navButton a{
-    color: black;
-    text-decoration: none;
-    margin: 0 20px 0 0;
-    font-family: 'Montserrat Alternates', sans-serif;
-  }
-  .navButton a:hover {
-    color: black;
-  }
-  .navButton:last-child a {
-    margin-right:2px;
-  } */
-
-  /* ............@media Query...........................*/
-
-/* @media all and (min-width: 640px) {
-    header {
-      display: flex;
-      height:200px;
-      justify-content: space-between;
-    }
-  
-    .logo {
-      margin: 14px 0 14px 20px;
-      padding-top: 0;
-      font-size: 42px;
-    }
-    
-    .navButton {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding-bottom: 15px;
-        list-style-type: none;
-        margin: 14px 0 14px 20px;
-        text-align: right;
-      }
-  } */
-  /* Media Query and type  for screen smaller or equal to 640px*/
-  /* @media all and (max-width: 640px) {
-    .headerContainer {
-      width: 90%;
-      margin: auto;
-      height:250px;
-      flex-direction: row;
-      margin-bottom:15px;
-    }
-    h2{
-        color:white;
-        font-size: 20px;
-        text-align: center;
-    }
-    .navButton{
-        justify-content: center;
-        text-align:center;
-    }
-
-  } */
 
   nav {
     border-bottom: 2px solid;
     display: flex;
-    max-width: 90%;
+    max-width: 100%;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
     height: 50px;
     padding: 0 .5em;
   }
-  .addResultlink{
-    margin: 10px;
-    /* border:solid; */
-  }
-  .logoutlink{
-    margin: 30px;
-    /* border:solid; */
-    width:40px;
-    border-radius: 5px;
-    /* background-color: red; */
-    /* color: white; */
-  }
+  
   .resultlink{
     margin: 30px;
     color:black;
@@ -160,13 +113,6 @@ h2{
     border-radius: 5px;
     
   }
-  /* .site-nav__dir a:nth-child(1) {
-      margin-right: .5em;
-    }
-  
-   .site-nav__dir--logged-in a:nth-child(1) {
-      margin-right: .5em;
-    } */
   
      a {
       font-size: 14px;
@@ -179,11 +125,12 @@ h2{
     }
   
     h1 {
-      font-size: 18px;
+      font-size: 2px;
     }
   
   
-  @media only screen and (min-width: 520px) {
+  @media only screen and (max-width: 620px) {
+    
     nav {
       padding: 5px;
       display: flex;
@@ -195,16 +142,11 @@ h2{
       flex-direction: row;
     }
     .site-nav{
-      height:100px;
+      height:200px;
+      width:100%;
+      margin-bottom:40px;
     }
 
-    /* .site-nav__dir a:nth-child(1) {
-      margin-right: .5em;
-    }
-  
-   .site-nav__dir--logged-in a:nth-child(1) {
-      margin-right: .5em;
-    } */
        a {
         font-size: 1em;
         text-decoration: none;
@@ -216,8 +158,58 @@ h2{
       }
     
       h1 {
-        font-size: 24px;
+        font-size: 30px;
+        text-align: center;
+        margin-top:-120px;
+        margin-right:400px;
+       
       }
+      .registerLink{
+        position:absolute;
+        right:250px;
+        padding:2px;
+        border:solid black;
+        width:80px;
+        height: 30px;
+        text-align: center;
+        border-radius: 10px;
+       
+      }
+      .loginLink{
+        position:absolute;
+        right:150px;
+        padding:2px;
+        border:solid;
+        width:60px; 
+        height: 30px;
+        text-align: center;
+        border-radius: 10px;
+       
+      }
+      .logoutlink{
+        position:absolute;
+        right:10px;
+        padding:2px;
+        border:solid;
+        width:60px; 
+        left:300px;
+        height: 30px;
+        text-align: center;
+        border-radius: 10px;
+      }
+
+      .addResultlink{
+        position:absolute;
+        right:80px;
+        padding:2px;
+        border:solid black;
+        left:200px;
+        width:80px;
+        height: 50px;
+        text-align: center;
+        border-radius: 10px;
+      }
+
     }
   
 

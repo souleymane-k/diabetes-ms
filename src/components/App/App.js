@@ -6,7 +6,7 @@ import LandingPage from '../../routes/LandingPage/LandingPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import AddResult from '../../routes/AddResult/AddResult'
-import AddMonth from '../../routes/AddMonth/AddMonth'
+// import AddMonth from '../../routes/AddMonth/AddMonth'
 import Result from '../../routes/Result/Result'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import Header from '../Header/Header'
@@ -95,7 +95,7 @@ handleAddMonth = month => {
                 <Route path={'/home'} component={Result}/>
                 {/* <PrivateRoute path={'/Result'} component={Result}/> */}
                 <PrivateRoute path={'/AddResult'} component={AddResult}/>
-                <PrivateRoute path={'/AddMonth'} component={AddMonth}/>
+                {/* <PrivateRoute path={'/AddMonth'} component={AddMonth}/> */}
                 <Route component={NotFoundPage}/>
               </Switch>
             </main>

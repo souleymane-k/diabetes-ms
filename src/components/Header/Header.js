@@ -22,9 +22,9 @@ export default class Header extends React.Component {
     return (
       <div className='site-nav__dir--logged-in'>
       
-        <Link to={'/AddMonth'} className='addMonthlink'>
+        {/* <Link to={'/AddMonth'} className='addMonthlink'>
           Add Month
-          </Link>
+          </Link> */}
           {' '}
         <Link to={'/AddResult'} className='addResultlink'>
           Add Result
@@ -46,8 +46,8 @@ export default class Header extends React.Component {
   renderLoginLink() {
     return (
       <div className='site-nav__dir'>
-        <Link to='/register' className='addResultlink'> Register</Link>
-        <Link to='/login' className='addResultlink'> Login </Link>
+        <Link to='/register' className='registerLink'> Register</Link>
+        <Link to='/login' className='loginLink'> Login </Link>
       </div>
     );
   };
@@ -56,7 +56,7 @@ export default class Header extends React.Component {
     return (
       <nav className='site-nav'>
         <h1>
-          <Link to='/'>
+          <Link className="titlelink"  to='/'>
           Diabetes Managing System
           </Link>
         </h1>

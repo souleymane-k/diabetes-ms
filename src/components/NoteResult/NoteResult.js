@@ -4,6 +4,7 @@ import ApiContext from '../../contexts/ApiContext';
 import TokenService from '../../services/TokenService'
 import config  from '../../config.js'
 import './NoteResult.css'
+import moment from 'moment'
 
 export default class Result extends React.Component {
   static defaultProps ={
@@ -37,14 +38,14 @@ export default class Result extends React.Component {
     const {result_id,month_taken,meal_taken,result_read,date_tested,month_id,userid,description,diabetestype} = this.props
     
     return (
+      <div className="result-form">
       <div className='Result'>
-        <h2 className='Result_result_read'>
+        <h2 className='Result_link'>
         <Link to={`/AddResult/${result_id}`}>
-            Result
-          </Link>
-          
+             ADD RESULT
+          </Link> 
         </h2>
-        
+        <div className="resultElements">
         <div className='Result_month_taken'>
           <div className='Result_results_description'>
           month_taken
@@ -52,7 +53,7 @@ export default class Result extends React.Component {
           {'  '}
 
             <span className='month_taken'>
-              {month_taken}
+              {moment().month(month_taken).format("MMMM")}
             </span> 
           </div> 
          </div>
@@ -79,30 +80,14 @@ export default class Result extends React.Component {
           date_tested
           {'   '}
             <span className='date_tested'>
-              {date_tested}
+              {moment(date_tested).format("DD/MM/YYYY")}
             </span> 
           </div> 
          </div>
-         <div className='Result_month_id'>
-          <div className='Result_results_month_id'>
-          month_id
-          {'   '}
-            <span className='month_id'>
-              {month_id}
-            </span> 
-          </div> 
-         </div>
-         <div className='Result_userid'>
-          <div className='Result_results_userid'>
-          userid
-          {'   '}
-            <span className='userid'>
-              {userid}
-            </span> 
-          </div> 
-         </div>
+         {/*  */}
+         {/*  */}
         
-         <div className='Result_description'>
+         <div className='Results_description'>
           <div className='Result_results_description'>
           Description
             {'   '}
@@ -125,8 +110,10 @@ export default class Result extends React.Component {
           type='button'
           onClick={this.handleClickDelete}
         >
-          Delete
+          DELETE
         </button>
+      </div>
+      </div>
       </div>
 
     )
