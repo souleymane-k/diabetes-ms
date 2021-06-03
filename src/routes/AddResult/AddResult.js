@@ -114,7 +114,7 @@ class AddResult extends Component {
         month_taken.value = '';
         description.value = '';
         diabetestype.value = '';
-        this.context.addResult(data);
+        // this.context.addResult(data);
         this.props.history.push('/home')
         // this.context.addResult(data);
       })

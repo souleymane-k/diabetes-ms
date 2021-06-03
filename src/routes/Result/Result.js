@@ -36,7 +36,8 @@ export default class NotePageMain extends React.Component {
     return (
       <section className='NoteResult'>
         {this.state.results.map(result=>(
-        <NoteResult
+        <NoteResult 
+        key={result.id}
         id={result.id}
         month_taken={result.month_taken}
         meal_taken={result.meal_taken}

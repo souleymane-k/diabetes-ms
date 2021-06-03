@@ -42,11 +42,16 @@ class App extends Component {
 
   
   componentDidMount() {
-    fetch(`${config.API_ENDPOINT}/results`).then((response) => response.json()).then((json)=> this.setState({results: json}))
+    fetch(`${config.API_ENDPOINT}/results`,{
+    method: 'GET',
+    headers: {
+      'content-type': 'application/json',
+      'authorization':`bearer ${TokenService.getAuthToken()}`
+    }
+  })
+    .then((response) => response.json())
+    .then((json)=> this.setState({results: json}))
     
-    fetch(`${config.API_ENDPOINT}/months`).then((response) => response.json()).then((json)=> this.setState({months:  json}))
-
-
  }
  handleDeleteNote = resultId => {
   this.setState({

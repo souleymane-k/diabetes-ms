@@ -35,7 +35,7 @@ export default class Result extends React.Component {
 
   render() {
     
-    const {result_id,month_taken,meal_taken,result_read,date_tested,month_id,userid,description,diabetestype} = this.props
+    const {result_id,month_taken,meal_taken,result_read,date_tested,description,diabetestype} = this.props
     
     return (
       <div className="result-form">
@@ -48,7 +48,7 @@ export default class Result extends React.Component {
         <div className="resultElements">
         <div className='Result_month_taken'>
           <div className='Result_results_description'>
-          month_taken
+          month
 
           {'  '}
 
@@ -59,7 +59,7 @@ export default class Result extends React.Component {
          </div>
          <div className='Result__meal_taken'>
           <div className='Resultresults_meal_taken'>
-          meal_taken
+          meal
           {'   '}
             <span className='meal_taken'>
               {meal_taken}
@@ -68,7 +68,7 @@ export default class Result extends React.Component {
          </div>
          <div className='Result_result_read'>
           <div className='Result_result_read'>
-          result_read
+          result
           {'   '}
             <span className='Result_read'>
               {result_read}
@@ -77,7 +77,7 @@ export default class Result extends React.Component {
          </div>
          <div className='Result_result_dates'>
           <div className='Result_result_date__tested'>
-          date_tested
+          date
           {'   '}
             <span className='date_tested'>
               {moment(date_tested).format("DD/MM/YYYY")}
