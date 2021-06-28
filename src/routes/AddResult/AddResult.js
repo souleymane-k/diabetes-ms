@@ -133,7 +133,7 @@ class AddResult extends Component {
             <h2>New Result</h2>
           </div>
           <div className='form-group'>
-            <label htmlFor="meal">Meal*</label>
+            <label htmlFor="meal_taken">Meal*</label>
             <input
               type="text"
               className="form__input"
@@ -144,7 +144,7 @@ class AddResult extends Component {
             />
           </div>
           <div className='form-group'>
-            <label htmlFor="result">result*</label>
+            <label htmlFor="result_read">result*</label>
             <input
               type="integer"
               className="form__input"
@@ -155,7 +155,7 @@ class AddResult extends Component {
             />
           </div>
           <div className='form-group'>
-            <label htmlFor="dateTested">date*</label>
+            <label htmlFor="date_tested">date*</label>
             <input
               type="integer"
               className="form__input"
@@ -172,7 +172,7 @@ class AddResult extends Component {
             <option value="3">March</option>
             <option value="4">April</option>
             <option value="5">May</option>
-            <option value="6">Juin</option>
+            <option value="6">June</option>
             <option value="7">July</option>
             <option value="8">Aout</option>
             <option value="9">September</option>
@@ -214,7 +214,6 @@ class AddResult extends Component {
               Save Result
             </button>
 
-            {/* <button onClick={goBack} className='addRestaurantButton'>Cancel</button> */}
 
             <button type="reset" className="form__button_cancel"
               onClick={this.handleClickCancel}
@@ -223,10 +222,6 @@ class AddResult extends Component {
             </button>
           </div>
 
-          {/* <div>
-          <button type='submit' className='addResultButton'>Submit</button>
-          <button type='cancel' className='addResultButton'>Cancel</button>
-        </div> */}
         </fieldset>
       </form>
 

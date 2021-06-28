@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom'
- import PublicOnlyRoute from '../Direction/PublicOnlyRoute'
+import PublicOnlyRoute from '../Direction/PublicOnlyRoute'
 import PrivateRoute from '../Direction/PrivateRoute'
 import LandingPage from '../../routes/LandingPage/LandingPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
@@ -69,10 +69,6 @@ handleAddMonth = month => {
   })
 }
 
-  // componentWillUnmount() {
-  //   this.context.clearError();
-  // }
-  
   setUser=(user)=>{
     this.setState({user})
   }
@@ -111,4 +107,3 @@ handleAddMonth = month => {
   }
 }
 export default App;
-// export default withAppContext(App);

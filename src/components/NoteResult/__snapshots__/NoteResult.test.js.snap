@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteResult component renders the complete form 1`] = `
+<div
+  className="result-form"
+>
+  <div
+    className="Result"
+  >
+    <h2
+      className="Result_link"
+    >
+      <Link
+        to="/AddResult/undefined"
+      >
+        ADD RESULT
+      </Link>
+    </h2>
+    <div
+      className="resultElements"
+    >
+      <div
+        className="Result_month_taken"
+      >
+        <div
+          className="Result_results_description"
+        >
+          month
+            
+          <span
+            className="month_taken"
+          >
+            06/24/2021
+          </span>
+        </div>
+      </div>
+      <div
+        className="Result__meal_taken"
+      >
+        <div
+          className="Resultresults_meal_taken"
+        >
+          meal
+             
+          <span
+            className="meal_taken"
+          />
+        </div>
+      </div>
+      <div
+        className="Result_result_read"
+      >
+        <div
+          className="Result_result_read"
+        >
+          result
+             
+          <span
+            className="Result_read"
+          />
+        </div>
+      </div>
+      <div
+        className="Result_result_dates"
+      >
+        <div
+          className="Result_result_date__tested"
+        >
+          date
+             
+          <span
+            className="date_tested"
+          >
+            06/24/2021
+          </span>
+        </div>
+      </div>
+      <div
+        className="Results_description"
+      >
+        <div
+          className="Result_results_description"
+        >
+          Description
+             
+          <span
+            className="Description"
+          />
+        </div>
+      </div>
+      <div
+        className="Result_diabetestype"
+      >
+        <div
+          className="Result_results_diabetestype"
+        >
+          diabetestype
+             
+          <span
+            className="Result_diabetestype"
+          />
+        </div>
+      </div>
+      <button
+        className="Result_delete"
+        onClick={[Function]}
+        type="button"
+      >
+        DELETE
+      </button>
+    </div>
+  </div>
+</div>
+`;

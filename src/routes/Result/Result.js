@@ -6,7 +6,7 @@ import { findResult } from '../../results-helpers'
 import './Result.css'
 
 
-export default class NotePageMain extends React.Component {
+export default class Result extends React.Component {
   static defaultProps = {
     match: {
       params: {}

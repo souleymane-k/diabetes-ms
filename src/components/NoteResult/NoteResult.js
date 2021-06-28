@@ -6,8 +6,10 @@ import config  from '../../config.js'
 import './NoteResult.css'
 import moment from 'moment'
 
-export default class Result extends React.Component {
+export default class NoteResult extends React.Component {
   static defaultProps ={
+    month_taken: new Date (),
+    date_tested: new Date(),
     onDeleteResult: () => {},
   }
   static contextType = ApiContext;
@@ -35,7 +37,9 @@ export default class Result extends React.Component {
 
   render() {
     
-    const {result_id,month_taken,meal_taken,result_read,date_tested,description,diabetestype} = this.props
+    const {result_id,
+      month_taken,
+      meal_taken,result_read,date_tested,description,diabetestype} = this.props
     
     return (
       <div className="result-form">
@@ -48,14 +52,15 @@ export default class Result extends React.Component {
         <div className="resultElements">
         <div className='Result_month_taken'>
           <div className='Result_results_description'>
-          month
+          month of
 
           {'  '}
 
             <span className='month_taken'>
-              {moment().month(month_taken).format("MMMM")}
+              {moment.utc(month_taken).format("MMMM")}
             </span> 
           </div> 
+        
          </div>
          <div className='Result__meal_taken'>
           <div className='Resultresults_meal_taken'>
@@ -71,7 +76,7 @@ export default class Result extends React.Component {
           result
           {'   '}
             <span className='Result_read'>
-              {result_read}
+              {result_read} {'   '} Mg/Dl
             </span> 
           </div> 
          </div>
@@ -80,13 +85,10 @@ export default class Result extends React.Component {
           date
           {'   '}
             <span className='date_tested'>
-              {moment(date_tested).format("DD/MM/YYYY")}
+              {moment.utc(date_tested).format("MM/DD/YYYY")}
             </span> 
           </div> 
          </div>
-         {/*  */}
-         {/*  */}
-        
          <div className='Results_description'>
           <div className='Result_results_description'>
           Description
