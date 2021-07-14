@@ -12,21 +12,37 @@
     background-repeat: no-repeat;
     background-size: 100%; */
   /* } */
+  .homePageHeader{
+    /* position:absolute; */
+    position:relative;
+    width:100%;
+    height:700px;
+    /* left:-20px; */
+    /* top:100px; */
+    bottom: 10px;
+    /* background-color: red; */
+    background-image: url(../../community-1.jpg);
+    /* background-repeat: no-repeat; */
+    
+  }
 
   .homePage{
-    position:absolute;
+    /* position:absolute; */
+    position: relative;
     width:100%;
-    left:-20px;
-    top:90px;
-    bottom: 10px;
+    height: 600px;
+    left:-45px;
+    top:-40px;
+    /* top:90px; */
+    /* bottom: 10px; */
     background-image: url(../../souleymane-3.jpg);
     /* background-repeat: no-repeat;  */
     /* z-index: -1; */
     /* opacity: 0.5; */
   }
-  img {
+  /* img {
     opacity: 0.5;
-  }
+  } */
   
   img:hover {
     opacity: 1.0;
@@ -43,6 +59,10 @@ h1{
    color:#551A8B;
  }
 
+ /* .firtssection, .secondsection, .thirdsection{
+   position: relative;
+   margin-top:100px;
+ } */
 .firtssection{
     width:100%;
     border:solid;

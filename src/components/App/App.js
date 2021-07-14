@@ -6,17 +6,14 @@ import LandingPage from '../../routes/LandingPage/LandingPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import AddResult from '../../routes/AddResult/AddResult'
-// import AddMonth from '../../routes/AddMonth/AddMonth'
 import Result from '../../routes/Result/Result'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import Header from '../Header/Header'
 import ApiContext from '../../contexts/ApiContext'
 import config  from '../../config.js'
-// import {filterResult} from '../results-helpers'
-// import AuthContext from '../../contexts/AuthContext'
-// import { withAppContext } from '../../contexts/AppContext'
 import TokenService from '../../services/TokenService'
 import './App.css';
+import EditResult from '../EditResult/EditResult';
 
 class App extends Component {
   
@@ -94,9 +91,8 @@ handleAddMonth = month => {
                 <PublicOnlyRoute path={'/login'} component={LoginPage}/>
                 <PublicOnlyRoute path={'/register'} component={RegistrationPage}/>
                 <Route path={'/home'} component={Result}/>
-                {/* <PrivateRoute path={'/Result'} component={Result}/> */}
                 <PrivateRoute path={'/AddResult'} component={AddResult}/>
-                {/* <PrivateRoute path={'/AddMonth'} component={AddMonth}/> */}
+                <PrivateRoute path={'/editresult/:id'} component={EditResult}/>
                 <Route component={NotFoundPage}/>
               </Switch>
             </main>

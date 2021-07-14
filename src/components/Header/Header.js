@@ -21,10 +21,6 @@ export default class Header extends React.Component {
   renderLogoutLink() {
     return (
       <div className='site-nav__dir--logged-in'>
-      
-        {/* <Link to={'/AddMonth'} className='addMonthlink'>
-          Add Month
-          </Link> */}
           {' '}
         <Link to={'/AddResult'} className='addResultlink'>
           Add Result

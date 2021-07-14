@@ -37,7 +37,7 @@ export default class NoteResult extends React.Component {
 
   render() {
     
-    const {result_id,
+    const {id,
       month_taken,
       meal_taken,result_read,date_tested,description,diabetestype} = this.props
     
@@ -45,7 +45,7 @@ export default class NoteResult extends React.Component {
       <div className="result-form">
       <div className='Result'>
         <h2 className='Result_link'>
-        <Link to={`/AddResult/${result_id}`}>
+        <Link to={`/AddResult/${id}`}>
              ADD RESULT
           </Link> 
         </h2>
@@ -114,6 +114,7 @@ export default class NoteResult extends React.Component {
         >
           DELETE
         </button>
+        <Link  to={`/editresult/${id}`} className="edit_result">Edit Result</Link>
       </div>
       </div>
       </div>
