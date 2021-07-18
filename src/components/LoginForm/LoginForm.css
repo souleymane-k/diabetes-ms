@@ -87,7 +87,7 @@ form {
 .login-form{
   background-image: url(../../souleymane-3.jpg);
   height:1000px;
-  margin-top:0;
+  margin-top:-25px;
 }
 
 .loginForm{
@@ -99,7 +99,7 @@ form {
   background-color: #EAF6F6;
   /* // justify-content: center;
   // align-items: center; */
-  background-color: #E6E6FA;
+  /* background-color: #E6E6FA; */
   border: none;
   border-radius: 4px;
   box-shadow: -1px 1px 5px 4px #000000;
@@ -127,6 +127,7 @@ form {
 
   input:focus {
     border: 2px solid white;
+    font-weight: 50px;
   }
 
   /* div {
@@ -148,26 +149,25 @@ input[type='submit'] {
   margin: 2em auto 1em auto;
   padding: 0.25em 0;
   width: 100px;
-  background-color: color-overlay;
-  border: 1px solid color-surface-light;
   border-radius: 2px;
-  box-shadow: 2px 2px 2px 0px color-shadow;
+  /* box-shadow: 2px 2px 2px 0px color-shadow; */
   transition: box-shadow 0.1s;
 }
 input:hover {
-    background-color: black;
+  background-color:orange;
     color: white;
     border: 1px solid;
     cursor: pointer;
+    
   }
   input:focus {
-    background-color: black;
+    /* background-color: black; */
     color: color-text-normal;
     border: 1px solid color-quaternary;
     box-shadow: none;
   }
   input:active {
-    background-color: color-overlay-dark;
+    background-color:orange;
     color: color-text-normal;
     border: 1px solid color-secondary;
   }
@@ -207,6 +207,9 @@ input:hover {
     box-shadow: -1px 1px 5px 4px #000000;
     padding: 1em 1.5em;
   }
+  /* .login-form{
+    margin-top:1px;
+  } */
    
 
  } 

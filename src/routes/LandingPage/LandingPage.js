@@ -6,9 +6,9 @@ export default function LandingPage() {
   // <img src={Souleymane} alt="maPhoto"></img>
   return (
    <div>
-     <section className="homePageHeader">
+     {/* <section className="homePageHeader">
         <h1>Diabetes can be managed by accessing and analysing data!</h1>
-     </section>
+     </section> */}
     <section className='homePage'>
       <div className="firtssection">
       <h3>What is DMS?</h3>
