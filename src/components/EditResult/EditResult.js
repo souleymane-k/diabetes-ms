@@ -4,6 +4,7 @@ import TokenService from '../../services/TokenService'
 import './EditResult.css';
 import config from '../../config.js'
 import moment from 'moment'
+import { Link } from 'react-router-dom';
 
 
 class EditResult extends Component {
@@ -244,11 +245,11 @@ class EditResult extends Component {
               Save Result
             </button>
 
-            <button type="reset" className="form__button_cancel"
+            <Link to={'/home'} type="reset" className="form__button_cancel"
               onClick={this.handleClickCancel}
             >
               Cancel
-            </button>
+            </Link>
           </div>
 
         </fieldset>

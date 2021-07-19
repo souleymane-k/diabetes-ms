@@ -3,12 +3,13 @@
   }
 .signUpForm-form{
   position:relative;
+  margin-top: -30px;
 }
 
 .registrationForm{
   width:50%;
   height:500px;
-  margin-top: 5px;
+  /* margin-top: 5px; */
 }
 .signUpForm-form{
   background-image: url(../../souleymane-3.jpg);
@@ -23,15 +24,15 @@ padding:0.5em;
 border-radius: 2px;
 }
 .btn{
-/* width:90%; */
-width: 500px;
-margin: 12px 40px;
+width: 100%;
 line-height: 2em;
 padding:0.5em;
 border-radius: 2px;
 font-size:20px;
 color:white;
 background-color:red;
+cursor:pointer;
+font-weight: 200px;
 }
 @media all and (max-width: 640px) {
 

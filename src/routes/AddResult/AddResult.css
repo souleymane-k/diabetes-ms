@@ -40,7 +40,7 @@ fieldset {
     
 } 
 .form__button_cancel{
-  /* margin: 10px 10px; */
+  margin: 10px 10px;
   height:35px;
 
 
@@ -59,6 +59,8 @@ fieldset {
 .add-result{
   background-image: url(../../souleymane-3.jpg);
   height:1000px;
+  margin-top:-30px;
+
 }
 .form__button__group{
   margin: 20px 300px;
@@ -73,4 +75,7 @@ fieldset {
   .form__button__group{
     margin: 20px 70px;
   }
+  /* .fieldset{
+    height: 1000px;
+  } */
   }
