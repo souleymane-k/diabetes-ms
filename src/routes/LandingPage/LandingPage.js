@@ -22,8 +22,8 @@ They can classify those data by refencing the year, the month, the date and the 
       </div>
       <div className="thirdsection">
       <h3>Recording Your daily diabetes test result with additional comments</h3>
-      <p>DMS allows individuals to input their daily test results and add their  diet in order. These data give more to create a relationalship between glucose level and diet
-        To start your healthy and preventive actions please sign up </p>
+      <p>DMS allows individuals to input their daily test results and add their  diet. These data give more tools to doctors create to take the best decision possible for their patients.
+        To start your healthy and preventive actions please sign up and enjoy the application. </p>
       </div>
     </section>
     </div>

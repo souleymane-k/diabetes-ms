@@ -6,27 +6,17 @@
 
 
   .homePage{
-    /* position:absolute; */
     position: relative;
     width:100%;
     height: 600px;
     left:-45px;
     top:-40px;
-    /* top:90px; */
-    /* bottom: 10px; */
-    /* background-image: url(../../souleymane-3.jpg); */
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../souleymane-3.jpg);
-
     background-repeat: no-repeat; 
     background-size: 100%;
     opacity:0.80;
-
-    /* z-index: -1; */
-    /* opacity: 0.5; */
   }
-  /* img {
-    opacity: 0.5;
-  } */
+  
   
   img:hover {
     opacity: 1.0;
@@ -43,15 +33,10 @@ h1{
    color:#551A8B;
  }
 
- /* .firtssection, .secondsection, .thirdsection{
-   position: relative;
-   margin-top:100px;
- } */
 .firtssection{
     width:100%;
     border:solid;
     height:250px;
-    /* border-radius: 5%; */
     margin:10px;
     background-color:#EAF6F6;
     color:black;
@@ -62,7 +47,6 @@ h1{
     border:solid;
     margin:10px;
     height:250px;
-    /* border-radius: 5%; */
     background-color:#EAF6F6;
     color:black;
 }
@@ -71,7 +55,6 @@ h1{
     border:solid;
     margin:10px;
     height:250px;
-    /* border-radius: 5%; */
     background-color:#EAF6F6;
     color:black;
 }
@@ -120,36 +103,42 @@ h1{
       text-align: center;
       max-width:90%;
       margin-top: 50px;
-      margin-left: 25px;
+      margin-left: 70px;
       background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../souleymane-3.jpg);
       background-size: 100%;
+      height:auto;
+     
 
     }
     .firtssection {
+      /* position: fixed; */
       width: 90%;
       padding:5px;
       margin: auto;
       /* height:250px; */
-      height:300px;
-      flex-direction: row;
-      margin-bottom:15px;
+      height:auto;
+      /* flex-direction: row; */
+      flex-direction: column;
+      /* margin-bottom:15px; */
     }
     .secondsection {
+      /* position:fixed; */
         width: 90%;
         margin: auto;
         padding:5px;
-        height:250px;
-        flex-direction: row;
-        margin-bottom:15px;
+        height:auto;
+        flex-direction: column;
+        
       }
       .thirdsection {
+        /* position:fixed; */
         width: 90%;
         margin: auto;
         padding:5px;
-        height:250px;
-        flex-direction: row;
-        margin-bottom:15px;
+        height:auto;
+        flex-direction: column;
       }
+
     h2{
         color:white;
         font-size: 20px;
@@ -164,16 +153,12 @@ h1{
         text-align: center;
         color:red;
     }
-  
-    /* .group {
-      flex-direction: row;
-    } */
   }
 
 
 
   /* small phone: from 0 to 480 px*/
-  @media only screen and (max-width: 480px) {
+  /* @media only screen and (max-width: 480px) {
 
     .homePage{
       display: flex;
@@ -221,9 +206,9 @@ h1{
     h3{
         text-align: center;
         color:red;
-    }
+    } */
   
     /* .group {
       flex-direction: row;
     } */
-  }
+  /* } */
