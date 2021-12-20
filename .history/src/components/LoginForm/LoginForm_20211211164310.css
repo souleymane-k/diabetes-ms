@@ -199,14 +199,18 @@ input:hover {
     /* display: flex; */
     height: 200px;
     flex-flow: column nowrap;
-    
-    background-color: #E6E6FA;
+    /* // justify-content: center;
+    // align-items: center; */
+    /* background-color: #E6E6FA; */
+    background-color: #E6E;
     border: none;
-    border-radius: 3px;
+    border-radius: 4px;
     box-shadow: -1px 1px 5px 4px #000000;
     padding: 1em 1.5em;
   }
-  
+  /* .login-form{
+    margin-top:1px;
+  } */
    
 
  } 
