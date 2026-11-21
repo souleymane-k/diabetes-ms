@@ -1,71 +1,38 @@
-import config from '../config';
-import TokenService from './TokenService';
+import config from '../config'
+import { parseJson, authHeaders } from './auth-api-service'
+import TokenService from './TokenService'
 
 const ResultsApiService = {
-  postResult(result) {
-    return fetch(`${config.API_ENDPOINT}/results`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
-      },
-      body: JSON.stringify(result),
+  async postResult(result) {
+    const res = await fetch(`${config.API_ENDPOINT}/results`, {
+      method: 'POST', headers: authHeaders(TokenService.getAuthToken()), body: JSON.stringify(result),
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+    return parseJson(res)
   },
-  getUserResults() {
-    return fetch(`${config.API_ENDPOINT}/results`, {
-      headers: {
-        // 'Content-Type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
-      }
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+  async getUserResults() {
+    const res = await fetch(`${config.API_ENDPOINT}/results`, { headers: authHeaders(TokenService.getAuthToken()) })
+    return parseJson(res)
   },
-  deleteResult(result_id) {
-    return fetch(`${config.API_ENDPOINT}/results/${result_id}`, {
-      method: 'DELETE',
-      headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
-      }
-    })
-      
+  async getSummary() {
+    const res = await fetch(`${config.API_ENDPOINT}/results/summary`, { headers: authHeaders(TokenService.getAuthToken()) })
+    return parseJson(res)
   },
-  getResultById(result_id) {
-    return fetch(`${config.API_ENDPOINT}/results/${result_id}`, {
-      headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
-      }
+  async deleteResult(resultId) {
+    const res = await fetch(`${config.API_ENDPOINT}/results/${resultId}`, {
+      method: 'DELETE', headers: authHeaders(TokenService.getAuthToken()),
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+    if (!res.ok) throw await parseJson(res)
   },
-  patchResult(result_id, newResultData) {
-    return fetch(`${config.API_ENDPOINT}/results/${result_id}`, {
-      method: 'PATCH',
-      headers: {
-        'content-type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
-      },
-      body: JSON.stringify(newResultData)
+  async getResultById(resultId) {
+    const res = await fetch(`${config.API_ENDPOINT}/results/${resultId}`, { headers: authHeaders(TokenService.getAuthToken()) })
+    return parseJson(res)
+  },
+  async patchResult(resultId, data) {
+    const res = await fetch(`${config.API_ENDPOINT}/results/${resultId}`, {
+      method: 'PATCH', headers: authHeaders(TokenService.getAuthToken()), body: JSON.stringify(data),
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : 1
-      )
-  }
+    if (!res.ok) await parseJson(res)
+  },
 }
 
-export default ResultsApiService;
+export default ResultsApiService

@@ -1,63 +1,41 @@
 import React from 'react'
 import NoteResult from '../../components/NoteResult/NoteResult'
-import ApiContext from '../../contexts/ApiContext'
-import ResultApiService from '../../services/result-api-service'
-import { findResult } from '../../results-helpers'
+import ResultsApiService from '../../services/result-api-service'
 import './Result.css'
 
-
 export default class Result extends React.Component {
-  static defaultProps = {
-    match: {
-      params: {}
-    }
-  }
-  static contextType = ApiContext
-    state ={
-      results:[]
-    }
-  handleDeleteResult = ()=> {
-    this.componentDidMount()
+  state = { results: [], summary: null, loading: true, error: null }
+
+  componentDidMount() { this.loadData() }
+
+  loadData = async () => {
+    this.setState({ loading: true, error: null })
+    try {
+      const [results, summary] = await Promise.all([ResultsApiService.getUserResults(), ResultsApiService.getSummary()])
+      this.setState({ results, summary, loading: false })
+    } catch (error) { this.setState({ error: error.message, loading: false }) }
   }
 
-  componentDidMount (){
-    ResultApiService.getUserResults()
-    .then(data =>{
-      this.setState({
-        results:data
-      })
-    })
-  }
+  handleDeleteResult = id => this.setState({ results: this.state.results.filter(item => item.id !== id) }, this.loadData)
 
   render() {
-    const { results=[] } = this.context
-    const { result_id } = this.props.match.params
-    const result = findResult(results, result_id) || {content: '' }
+    const { results, summary, loading, error } = this.state
     return (
       <section className='NoteResult'>
-        {this.state.results.map(result=>(
-        <NoteResult 
-        key={result.id}
-        id={result.id}
-        month_taken={result.month_taken}
-        meal_taken={result.meal_taken}
-        result_read={result.result_read}
-        date_tested={result.date_tested}
-        month_id={result.month_id}
-        userid={result.userid}
-        description={result.description}
-        diabetestype={result.diabetestype}
-        onDeleteResult={this.handleDeleteResult}
-      />
-        ))}
-        
-        <div className='NoteResult__content'>
-        {result.content.split(/\n \r|\n/).map((para, i) =>
-          <p key={i}>{para}</p>
+        <h2>Your Diabetes Results</h2>
+        {loading && <p>Loading results...</p>}
+        {error && <p role='alert' className='form-error'>{error}</p>}
+        {summary && !loading && (
+          <div className='result-summary'>
+            <h3>Summary</h3>
+            <p><strong>Total readings:</strong> {summary.count}</p>
+            <p><strong>Overall average:</strong> {summary.average === null ? 'N/A' : `${summary.average.toFixed(1)} mg/dL`}</p>
+            {summary.byMonth.map(month => <p key={month.monthName}><strong>{month.monthName}:</strong> {month.count} reading(s), average {month.average === null ? 'N/A' : `${month.average.toFixed(1)} mg/dL`}</p>)}
+          </div>
         )}
-      </div>
+        {!loading && results.length === 0 && <p>No readings yet. Add your first result.</p>}
+        {results.map(item => <NoteResult key={item.id} {...item} onDeleteResult={this.handleDeleteResult} />)}
       </section>
     )
   }
-  
 }

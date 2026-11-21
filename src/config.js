@@ -1,4 +1,4 @@
 export default {
   API_ENDPOINT: process.env.REACT_APP_API_ENDPOINT || 'http://localhost:8002/api',
-  API_TOKEN: process.env.REACT_APP_API_TOKEN || ''
+  API_TOKEN: process.env.REACT_APP_API_TOKEN || 'diabetes-ms-auth-token'
 }
