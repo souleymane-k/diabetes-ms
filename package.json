@@ -2,25 +2,21 @@
   "name": "diabetes-ms",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "26.x",
+    "npm": ">=10"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.8.1",
     "animate.css": "^4.1.1",
     "date-fns": "^2.21.1",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-15": "^1.4.3",
-    "enzyme-adapter-react-16": "^1.15.6",
-    "enzyme-to-json": "^3.6.2",
     "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "vercel": "^21.3.3",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
@@ -50,6 +46,9 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.1",
     "react-test-renderer": "^17.0.2"
   }
 }
